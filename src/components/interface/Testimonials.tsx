@@ -82,7 +82,7 @@ export default function TestimonialsPage() {
                         plugins={[
                             AutoScroll({ playOnInit: true, stopOnInteraction: false, speed: 1 }),
                         ]}
-                        className="relative before:absolute before:bottom-0 before:left-0 before:top-0 before:z-10 before:w-36 before:bg-gradient-to-r before:from-slate-900 before:to-transparent after:absolute after:bottom-0 after:right-0 after:top-0 after:z-10 after:w-36 after:bg-gradient-to-l after:from-slate-900 after:to-transparent"
+                        className="relative lg:before:absolute lg:before:bottom-0 lg:before:left-0 lg:before:top-0 lg:before:z-10 lg:before:w-36 lg:before:bg-gradient-to-r lg:before:from-slate-900 lg:before:to-transparent lg:after:absolute lg:after:bottom-0 lg:after:right-0 lg:after:top-0 lg:after:z-10 lg:after:w-36 lg:after:bg-gradient-to-l lg:after:from-slate-900 lg:after:to-transparent"
                     >
                         <CarouselContent className="">
                             {testimonials.map((testimonial, index) => (
