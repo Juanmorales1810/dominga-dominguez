@@ -1,0 +1,98 @@
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
+
+@theme {
+    --color-background: hsl(0, 0%, 100%);
+    --color-foreground: hsl(20 14.3% 4.1%);
+    --color-card: hsl(0, 0%, 100%);
+    --color-card-foreground: hsl(20 14.3% 4.1%);
+    --color-popover: hsl(0, 0%, 100%);
+    --color-popover-foreground: hsl(20 14.3% 4.1%);
+    --color-primary: hsl(24.6 95% 53.1%);
+    --color-primary-foreground: hsl(60 9.1% 97.8%);
+    --color-secondary: hsl(60 4.8% 95.9%);
+    --color-secondary-foreground: hsl(24 9.8% 10%);
+    --color-muted: hsl(60 4.8% 95.9%);
+    --color-muted-foreground: hsl(0, 0%, 45.1%);
+    --color-accent: hsl(60 4.8% 95.9%);
+    --color-accent-foreground: hsl(24 9.8% 10%);
+    --color-destructive: hsl(0 84.2% 60.2%);
+    --color-destructive-foreground: hsl(60 9.1% 97.8%);
+    --color-border: hsl(20 5.9% 90%);
+    --color-input: hsl(20 5.9% 90%);
+    --color-ring: hsl(24.6 95% 53.1%);
+    --color-chart-1: hsl(12, 76%, 61%);
+    --color-chart-2: hsl(173, 58%, 39%);
+    --color-chart-3: hsl(197, 37%, 24%);
+    --color-chart-4: hsl(43, 74%, 66%);
+    --color-chart-5: hsl(27, 87%, 67%);
+    --radius-lg: 0.5rem;
+    --radius-md: calc(0.5rem - 2px);
+    --radius-sm: calc(0.5rem - 4px);
+}
+
+@utility rounded-lg {
+    border-radius: var(--radius-lg);
+}
+@utility rounded-md {
+    border-radius: var(--radius-md);
+}
+@utility rounded-sm {
+    border-radius: var(--radius-sm);
+}
+
+@utility bg-background {
+    background-color: var(--color-background);
+}
+@utility text-foreground {
+    color: var(--color-foreground);
+}
+@utility bg-card {
+    background-color: var(--color-card);
+}
+@utility text-card-foreground {
+    color: var(--color-card-foreground);
+}
+@utility bg-primary {
+    background-color: var(--color-primary);
+}
+@utility text-primary-foreground {
+    color: var(--color-primary-foreground);
+}
+
+@layer base {
+    .dark {
+        --color-background: hsl(20 14.3% 4.1%);
+        --color-foreground: hsl(0, 0%, 98%);
+        --color-card: hsl(20 14.3% 4.1%);
+        --color-card-foreground: hsl(0, 0%, 98%);
+        --color-popover: hsl(20 14.3% 4.1%);
+        --color-popover-foreground: hsl(0, 0%, 98%);
+        --color-primary: hsl(0, 0%, 98%);
+        --color-primary-foreground: hsl(24.6 95% 53.1%);
+        --color-secondary: hsl(0, 0%, 14.9%);
+        --color-secondary-foreground: hsl(0, 0%, 98%);
+        --color-muted: hsl(0, 0%, 14.9%);
+        --color-muted-foreground: hsl(0, 0%, 63.9%);
+        --color-accent: hsl(0, 0%, 14.9%);
+        --color-accent-foreground: hsl(0, 0%, 98%);
+        --color-destructive: hsl(0, 62.8%, 30.6%);
+        --color-destructive-foreground: hsl(0, 0%, 98%);
+        --color-border: hsl(0, 0%, 14.9%);
+        --color-input: hsl(0, 0%, 14.9%);
+        --color-ring: hsl(0, 0%, 83.1%);
+        --color-chart-1: hsl(220, 70%, 50%);
+        --color-chart-2: hsl(160, 60%, 45%);
+        --color-chart-3: hsl(30, 80%, 55%);
+        --color-chart-4: hsl(280, 65%, 60%);
+        --color-chart-5: hsl(340, 75%, 55%);
+    }
+}
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply font-sans antialiased bg-background text-foreground;
+    }
+}
