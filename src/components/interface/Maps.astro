@@ -1,0 +1,44 @@
+---
+import { MapPinCheck, MessageSquareDot } from "lucide-react";
+---
+
+<section class="py-32">
+    <div class="container mx-auto">
+        <div
+            class="relative flex items-center justify-center rounded-2xl border text-center"
+        >
+            <div class="h-[450px] w-full opacity-20">
+                <img
+                    class="w-full h-full object-cover"
+                    src="/maps.png"
+                    alt="Region de Coquimbo"
+                />
+            </div>
+            <div class="absolute mx-auto max-w-screen-md px-8 my-20 md:p-20">
+                <h1
+                    class="mb-4 text-balance text-white text-3xl font-semibold md:text-5xl"
+                >
+                    Start building your websites faster
+                </h1><p class="text-zinc-400 md:text-lg">
+                    Try our tools and services to build your website faster.
+                    Start with a 14-day free trial. No credit card required. No
+                    setup fees. Cancel anytime.
+                </p><div
+                    class="mt-11 flex flex-col justify-center gap-2 sm:flex-row"
+                >
+                    <button
+                        class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 rounded-md px-8"
+                    >
+                        Visítenos
+                        <MapPinCheck className="w-5 h-5 ml-2" />
+                    </button><button
+                        class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-11 rounded-md px-8"
+                    >
+                        Reserve ahora
+                        <MessageSquareDot className="w-5 h-5 ml-2" />
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
