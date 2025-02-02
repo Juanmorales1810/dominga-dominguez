@@ -1,0 +1,72 @@
+---
+import { ParallaxCarousel } from "../Gallery";
+---
+
+<section class="relative py-32">
+    <div class="container mx-auto">
+        <div
+            class="absolute inset-x-0 top-0 -z-10 flex h-full w-full items-center justify-center opacity-100 bg-[url(/pattern.svg)] bg-no-repeat bg-center bg-cover bg-blend-multiply"
+        >
+        </div>
+        <div class="mx-auto flex max-w-5xl flex-col items-center">
+            <div class="z-10 flex flex-col items-center gap-6 text-center">
+                <img
+                    src="https://shadcnblocks.com/images/block/block-1.svg"
+                    alt="logo"
+                    class="h-16"
+                /><div
+                    class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-white"
+                >
+                    UI Blocks
+                </div><div>
+                    <h1
+                        class="mb-6 text-pretty text-white text-2xl font-bold lg:text-5xl"
+                    >
+                        Build your next project with Blocks
+                    </h1><p class="text-muted-foreground lg:text-xl">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Elig doloremque mollitia fugiat omnis! Porro facilis quo
+                        animi consequatur. Explicabo.
+                    </p>
+                </div>
+                <div class="mt-4 flex justify-center gap-2">
+                    <button
+                        class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
+                    >
+                        Get Started
+                    </button>
+                    <button
+                        class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2"
+                    >
+                        Learn more
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="lucide lucide-external-link ml-2 h-4"
+                        >
+                            <path d="M15 3h6v6"></path>
+                            <path d="M10 14 21 3"></path>
+                            <path
+                                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                            ></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="mt-20 flex w-full flex-col items-center gap-4">
+                    <p class="text-center: text-muted-foreground lg:text-left">
+                        Built with open-source technologies
+                    </p>
+
+                    <ParallaxCarousel client:only />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
