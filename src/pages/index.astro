@@ -6,10 +6,16 @@ import Gallery from "@/components/interface/Gallery.astro";
 import Contact from "@/components/interface/Contact.astro";
 import Maps from "@/components/interface/Maps.astro";
 import Cta from "@/components/interface/Cta.astro";
+import Description from "@/components/interface/Description.astro";
+import Menu from "@/components/interface/Menu.astro";
+import Drinks from "@/components/interface/Drinks.astro";
 ---
 
 <Layout>
     <Hero />
+    <Description />
+    <Menu />
+    <Drinks />
     <Testimonials client:only />
     <Gallery />
     <Cta />
