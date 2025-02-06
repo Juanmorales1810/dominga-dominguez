@@ -1,0 +1,59 @@
+---
+import { Martini } from "lucide-react";
+
+const drinks = [
+    {
+        name: "Vinos seleccionados",
+        description: "Los mejores viñedos del Valle del Elqui y Chile.",
+        image: "https://domingadominguez.cl/wp-content/uploads/2020/01/8.jpg",
+    },
+    {
+        name: "Coctelería de autor",
+        description: "Pisco sour, mojitos, caipiriñas y más.",
+        image: "https://domingadominguez.cl/wp-content/uploads/2020/01/14.jpg",
+    },
+    {
+        name: "Espumantes y destilados",
+        description: "Perfectos para cualquier ocasión especial.",
+        image: "https://domingadominguez.cl/wp-content/uploads/2020/01/15.jpg",
+    },
+];
+---
+
+<section class="py-32">
+    <div class="container mx-auto px-2">
+        <div
+            class="mx-auto flex max-w-screen-sm flex-col items-center gap-5 text-center"
+        >
+            <h2 class="text-3xl font-semibold text-white md:text-5xl">
+                Nuestra Carta de Tragos
+            </h2>
+            <p class="text-zinc-400 md:text-lg">
+                Acompaña tu experiencia gastronómica con nuestra exclusiva
+                selección de tragos y cócteles:
+            </p>
+        </div>
+        <div class="mt-20 grid gap-6 md:grid-cols-3 lg:gap-10">
+            {
+                drinks.map((drink, index) => (
+                    <div class="flex flex-col ">
+                        <img
+                            src={drink.image}
+                            alt={drink.name}
+                            class="aspect-video size-full rounded-lg object-cover"
+                        />
+                        <div class="p-6 pl-0">
+                            <h3 class="mb-2.5 font-semibold text-white flex items-center md:text-xl">
+                                <Martini className="w-6 h-6 mr-2 text-primary" />
+                                {drink.name}
+                            </h3>
+                            <p class="flex items-center text-zinc-300 gap-1 text-sm">
+                                {drink.description}
+                            </p>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
