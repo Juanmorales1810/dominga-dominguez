@@ -6,51 +6,51 @@ import AutoScroll from "embla-carousel-auto-scroll"
 
 interface Testimonial {
     name: string
-    role: string
+    role?: string
     avatar: string
     quote: string
 }
 
 const testimonials: Testimonial[] = [
     {
-        name: "Alice Johnson",
-        role: "CEO & Founder",
+        name: "Juan P.",
+        // role: "CEO & Founder",
         avatar: "https://shadcnblocks.com/images/block/avatar-1.webp",
-        quote: "This platform has revolutionized the way we manage projects. It is incredibly user-friendly and efficient.",
+        quote: "Uno de los mejores restaurantes de Coquimbo. Atención increíble y comida espectacular.",
     },
     {
-        name: "David Lee",
-        role: "CTO",
+        name: "María F.",
+        // role: "CTO",
         avatar: "https://shadcnblocks.com/images/block/avatar-2.webp",
         quote:
-            "I have been impressed with the seamless integration and functionality. It has made our tech operations much smoother.",
+            "La reineta a la mantequilla es un imperdible. Volveré sin duda.",
     },
     {
-        name: "Mark Thompson",
-        role: "COO",
+        name: "Ricardo G.",
+        // role: "COO",
         avatar: "https://shadcnblocks.com/images/block/avatar-3.webp",
         quote:
-            "Managing our day-to-day tasks has never been easier. The interface is intuitive and saves us a lot of time.",
+            "Exquisita comida y ambiente acogedor. Perfecto para disfrutar con amigos y familia.",
     },
     {
-        name: "Emily Carter",
-        role: "Tech Lead",
+        name: "Natalia Guliaew",
+        // role: "Tech Lead",
         avatar: "https://shadcnblocks.com/images/block/avatar-4.webp",
-        quote: "The tools provided have significantly improved our team's workflow and collaboration. Highly recommend it!",
+        quote: "Excelente experiencia recomiendo sus productos servicio coctelería todo maravilloso platos frescos contundente sabor único, la coctelería no se queda atrás muy bueno.",
     },
     {
-        name: "Sophia Turner",
-        role: "Designer",
+        name: "Eve Wells",
+        // role: "Designer",
         avatar: "https://shadcnblocks.com/images/block/avatar-5.webp",
         quote:
-            "From a design perspective, the flexibility and ease of use are outstanding. This has become an indispensable tool for our team.",
+            "Empezando el lugar es muy bonito y la atención muy amable y cálida. Pedimos, locos, cebiche y el fantástico pulpo a la parrilla, todo excelente. ",
     },
     {
-        name: "James Wilson",
-        role: "Developer",
+        name: "Marcelo Moreno",
+        role: "Local Guide",
         avatar: "https://shadcnblocks.com/images/block/avatar-6.webp",
         quote:
-            "As a developer, I appreciate the robust features and simplicity. It has streamlined our processes considerably.",
+            "Solo tenía 1 recuerdo de un restaurante donde comiera algo excepcional y este es el segundo, el anterior fue hace 20 años atrás",
     },
 ]
 
@@ -62,13 +62,13 @@ export default function TestimonialsPage() {
             <div className="container mx-auto flex flex-col items-center gap-4">
                 <div className="text-white flex items-center gap-1 text-sm font-semibold">
                     <Zap className="h-6 w-auto fill-white stroke-white" />
-                    Calificado con 5 estrellas por más de 1000 clientes
+                    Calificado con 5 estrellas por más de 300 clientes
                 </div>
                 <h2 className="text-white text-center text-3xl font-semibold lg:text-4xl">Conoce a nuestros clientes satisfechos</h2>
                 <p className="text-center text-zinc-400 lg:text-lg">
-                    Únete a una red global de líderes de pensamiento, desarrolladores de productos,
+                    ¿Ya visitaste Dominga Domínguez? Déjanos tu reseña en Google My Business y síguenos en Instagram
                 </p>
-                <a href="#" className="text-white flex items-center gap-1 font-semibold">
+                <a target="_blank" href="https://www.google.com/search?gs_ssp=eJzj4tVP1zc0zDArNjQzrigzYLRSNaiwNLM0TLa0NDA1TDYysDSxtDKoSEk0TrYwMzYwN080Sk00SvESTMnPzcxLT1SA0KWpVQDQ9hVW&q=dominga+dominguez&oq=dominga+dominguez&gs_lcrp=EgZjaHJvbWUqDQgBEC4YrwEYxwEYgAQyCggAEAAY4wIYgAQyDQgBEC4YrwEYxwEYgAQyCAgCEAAYFhgeMggIAxAAGBYYHjIHCAQQABjvBTIKCAUQABiABBiiBDIHCAYQABjvBTIKCAcQABiABBiiBDIKCAgQABiiBBiJBdIBCjEzMDY1ajBqMTWoAgiwAgE&sourceid=chrome&ie=UTF-8#lrd=0x9691c99051c20949:0xda3c863077a2ea2d,1,,,," className="text-white flex items-center gap-1 font-semibold">
                     Ver todos los testimonios
                     <ChevronRight className="mt-0.5 h-4 w-auto" />
                 </a>
@@ -110,7 +110,7 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
                         </Avatar>
                         <div>
                             <p className="font-medium text-white">{testimonial.name}</p>
-                            <p className="text-sm text-zinc-300">{testimonial.role}</p>
+                            <p className="text-sm text-zinc-300">{testimonial.role || null}</p>
                         </div>
                     </div>
                     <div className="flex gap-1">
