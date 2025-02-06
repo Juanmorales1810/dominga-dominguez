@@ -1,3 +1,7 @@
+---
+import { ArrowRight } from "lucide-react";
+---
+
 <section class="mt-16">
     <div
         class="absolute top-0 z-[-2] h-screen w-screen bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
@@ -5,20 +9,23 @@
     </div>
     <div class="container mx-auto flex flex-col items-center">
         <div class="w-full overflow-clip rounded-lg">
-            <div class="grid items-center gap-8 lg:grid-cols-2">
+            <div class="grid items-center lg:gap-8 lg:grid-cols-2">
                 <div
-                    class="container flex flex-col items-center px-[4rem] py-16 text-center lg:mx-auto lg:items-start lg:px-[4rem] lg:py-32 lg:text-left"
+                    class="container flex flex-col items-center px-8 py-10 text-center lg:mx-auto lg:items-start lg:px-[4rem] lg:py-32 lg:text-left"
                 >
-                    <p class="text-white">New Release</p>
+                    <p class="text-white">Nuevo lanzamiento</p>
                     <h1
-                        class="text-white my-6 text-pretty text-4xl font-bold lg:text-6xl"
+                        class="text-white my-6 text-pretty text-2xl font-bold lg:text-5xl"
                     >
-                        Welcome to Our Website
+                        Restaurante Dominga Domínguez | La Mejor Gastronomía de
+                        Mar y Tierra en Coquimbo, Caleta de Peñuelas
                     </h1>
                     <p class="mb-8 max-w-xl text-zinc-400 lg:text-xl">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Elig doloremque mollitia fugiat omnis! Porro facilis quo
-                        animi consequatur. Explicabo.
+                        Disfruta de una experiencia gastronómica única con los
+                        sabores más frescos del mar y la mejor cocina de tierra,
+                        en un ambiente acogedor y con una terraza en el tercer
+                        piso con vista panorámica a la Caleta de Pescadores de
+                        Coquimbo.
                     </p>
                     <div
                         class="flex w-full flex-col justify-center gap-2 sm:flex-row lg:justify-start"
@@ -26,22 +33,8 @@
                         <button
                             class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full sm:w-auto"
                         >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                class="lucide lucide-arrow-right mr-2 size-4"
-                            >
-                                <path d="M5 12h14"></path>
-                                <path d="m12 5 7 7-7 7"></path>
-                            </svg>
-                            Primary
+                            <ArrowRight className="w-4 h-4 mr-2" />
+                            Reserva Ahora Tu Mesa
                         </button>
                     </div>
                 </div>
