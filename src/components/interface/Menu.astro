@@ -1,0 +1,85 @@
+---
+import { Utensils } from "lucide-react";
+
+const menu = [
+    {
+        title: "Entradas y Aperitivos",
+        image: "https://domingadominguez.cl/wp-content/uploads/2020/06/MG_6868.jpg",
+        description1:
+            "Ostiones a la Parmesana | Gratinados con queso parmesano y mantequilla.",
+        description2:
+            "Ceviche de Camarón y Reineta | Con limón, ají verde y cilantro fresco.",
+    },
+    {
+        title: "Pescados Seleccionados",
+        image: "https://domingadominguez.cl/wp-content/uploads/2020/06/MG_6853.jpg",
+        description1:
+            "Reineta a la Mantequilla de Hierbas | Con puré rústico y ensalada verde.",
+        description2:
+            "Congrio Frito o a la Plancha | Con papas rústicas y salsa de la casa.",
+    },
+    {
+        title: "Cortes Premium",
+        image: "https://domingadominguez.cl/wp-content/uploads/2020/06/MG_6951.jpg",
+        description1:
+            "Asado de Tira en Larga Cocción | Con puré de zapallo y ensalada verde.",
+        description2:
+            "Lomo Vetado a la Parrilla | Acompañado de chimichurri casero.",
+    },
+    {
+        title: "Especialidades de la Casa",
+        image: "https://domingadominguez.cl/wp-content/uploads/2020/06/MG_6861.jpg",
+        description1:
+            "Paila Marina | Caldo de mariscos frescos con hierbas aromáticas.",
+        description2:
+            "Chupe de Jaiba | Cremoso, gratinado con queso parmesano.",
+    },
+];
+---
+
+<section class="py-32">
+    <div class="container mx-auto px-2">
+        <h2 class="mb-6 text-center text-white text-5xl font-semibold">
+            Nuestro Menú | Sabor y Tradición en Cada Plato
+        </h2>
+        <p class="m-auto max-w-3xl text-center text-xl text-zinc-300">
+            Descubre lo mejor de la cocina de mar y tierra en Coquimbo, con
+            ingredientes frescos y una combinación de tradición e innovación.
+        </p>
+        <p class="m-auto mt-3 max-w-2xl text-center text-sm text-zinc-500">
+            Ubicado en Caleta de Peñuelas, Coquimbo
+            <br />
+            Nuestros horarios son de lunes a domingo de 12:00 a 23:00 horas.
+        </p>
+        <a
+            class="mx-auto mt-8 block w-fit rounded-full border-2 border-muted bg-white px-6 py-4 text-sm font-semibold transition hover:border-muted-foreground"
+            href="#"
+        >
+            Reserva tu Mesa
+        </a>
+        <div class="mx-auto mt-16 flex flex-col gap-6 md:flex-row">
+            {
+                menu.map((item, index) => (
+                    <div class="block">
+                        <img
+                            src={item.image}
+                            alt="placeholder"
+                            class="mb-6 h-full max-h-72 w-full rounded-2xl object-cover transition hover:brightness-90 lg:max-h-96"
+                        />
+                        <h6 class="mb-3 text-lg text-white font-semibold">
+                            {item.title}
+                        </h6>
+                        <p class="text-sm text-zinc-300 flex items-center gap-2">
+                            <Utensils className="size-5 text-primary" />
+                            {item.description1}
+                        </p>
+                        <p class="text-sm text-zinc-300 flex items-center gap-2">
+                            <Utensils className="size-5 text-primary" />
+                            {item.description2}
+                        </p>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
