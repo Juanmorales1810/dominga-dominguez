@@ -1,5 +1,7 @@
 ---
+import { Image } from "astro:assets";
 import { CheckIcon, Notebook, Wine } from "lucide-react";
+import ImageDescription from "@/assets/description/Fotos_Oficiales-40.jpg";
 
 const listContent = [
     "Ingredientes frescos del día.",
@@ -10,7 +12,7 @@ const listContent = [
 ];
 ---
 
-<section
+<section id="Description"
     class="mx-auto container flex flex-col items-start gap-20 py-16 px-2 md:py-32 md:flex-row md:items-center"
 >
     <div class="w-full lg:w-[50%]">
@@ -57,8 +59,8 @@ const listContent = [
         >
         </div>
         <div class="relative m-auto w-full md:w-[80%]">
-            <img
-                src="https://domingadominguez.cl/wp-content/uploads/2020/01/32.jpg"
+            <Image
+                src={ImageDescription}
                 alt="placeholder hero"
                 class="z-50 max-h-[350px] w-full rounded-md object-cover"
             />
