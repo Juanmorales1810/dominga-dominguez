@@ -1,5 +1,7 @@
 ---
 import { MapPinCheck, MessageSquareDot } from "lucide-react";
+import mapsImage from "/public/maps.png";
+import { Image } from "astro:assets";
 ---
 
 <section class="py-32 px-2">
@@ -8,10 +10,10 @@ import { MapPinCheck, MessageSquareDot } from "lucide-react";
             class="relative flex items-center justify-center rounded-2xl border text-center group"
         >
             <div class="h-[450px] w-full opacity-20">
-                <img
-                    class="w-full h-full object-cover group-hover:blur-sm transition-all duration-300"
-                    src="/maps.png"
+                <Image
+                    src={mapsImage}
                     alt="Region de Coquimbo"
+                    class="w-full h-full object-cover group-hover:blur-sm transition-all duration-300"
                 />
             </div>
             <div class="absolute mx-auto max-w-screen-md px-8 my-20 md:p-20">
@@ -27,17 +29,20 @@ import { MapPinCheck, MessageSquareDot } from "lucide-react";
                 <div
                     class="mt-11 flex flex-col justify-center gap-2 sm:flex-row"
                 >
-                    <button
+                    <a
+                        href="https://www.google.com/maps/place/Dominga+Dominguez+Restaurante/@-29.9527008,-71.2990998,17z/data=!3m1!4b1!4m6!3m5!1s0x9691c99051c20949:0xda3c863077a2ea2d!8m2!3d-29.9527008!4d-71.2990998!16s%2Fg%2F11h6s163xv?hl=es&entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D"
                         class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 rounded-md px-8"
                     >
                         Visítenos
                         <MapPinCheck className="w-5 h-5 ml-2" />
-                    </button><button
+                    </a>
+                    <a
+                        href="https://api.whatsapp.com/send?phone=56974956652&text=Hola!%20Me%20gustaria%20hacer%20una%20reserva%20%E2%98%BA%EF%B8%8F"
                         class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-11 rounded-md px-8"
                     >
                         Reserve ahora
                         <MessageSquareDot className="w-5 h-5 ml-2" />
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
