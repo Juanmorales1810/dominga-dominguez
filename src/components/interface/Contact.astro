@@ -1,8 +1,10 @@
 ---
+import { Image } from "astro:assets";
 import ReservationForm from "../reservationForm";
+import ImageLocal from "@/assets/form/46-arreglado.jpg";
 ---
 
-<section class="relative py-32 px-2 md:relative">
+<section id="Contact" class="relative py-32 px-2 md:relative">
     <img
         src="/background.svg"
         alt=""
@@ -15,9 +17,9 @@ import ReservationForm from "../reservationForm";
         <aside
             class="relative block h-24 lg:order-last lg:col-span-5 lg:h-full xl:col-span-6"
         >
-            <img
-                alt=""
-                src="https://domingadominguez.cl/wp-content/uploads/2020/01/46-arreglado.jpg"
+            <Image
+                alt="Local"
+                src={ImageLocal}
                 class="absolute inset-0 h-full w-full object-cover rounded-2xl lg:rounded-r-2xl lg:rounded-l-none"
             />
         </aside>
