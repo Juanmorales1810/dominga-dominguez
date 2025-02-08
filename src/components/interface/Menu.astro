@@ -1,10 +1,15 @@
 ---
+import { Image } from "astro:assets";
 import { Utensils } from "lucide-react";
+import Image1 from "@/assets/menu/Fotos_Oficiales-50.jpg";
+import Image2 from "@/assets/menu/Fotos_Oficiales-48.jpg";
+import Image3 from "@/assets/menu/Fotos_Oficiales-81.jpg";
+import Image4 from "@/assets/menu/Fotos_Oficiales-63.jpg";
 
 const menu = [
     {
         title: "Entradas y Aperitivos",
-        image: "https://domingadominguez.cl/wp-content/uploads/2020/06/MG_6868.jpg",
+        image: Image1,
         description1:
             "Ostiones a la Parmesana | Gratinados con queso parmesano y mantequilla.",
         description2:
@@ -12,7 +17,7 @@ const menu = [
     },
     {
         title: "Pescados Seleccionados",
-        image: "https://domingadominguez.cl/wp-content/uploads/2020/06/MG_6853.jpg",
+        image: Image2,
         description1:
             "Reineta a la Mantequilla de Hierbas | Con puré rústico y ensalada verde.",
         description2:
@@ -20,7 +25,7 @@ const menu = [
     },
     {
         title: "Cortes Premium",
-        image: "https://domingadominguez.cl/wp-content/uploads/2020/06/MG_6951.jpg",
+        image: Image3,
         description1:
             "Asado de Tira en Larga Cocción | Con puré de zapallo y ensalada verde.",
         description2:
@@ -28,7 +33,7 @@ const menu = [
     },
     {
         title: "Especialidades de la Casa",
-        image: "https://domingadominguez.cl/wp-content/uploads/2020/06/MG_6861.jpg",
+        image: Image4,
         description1:
             "Paila Marina | Caldo de mariscos frescos con hierbas aromáticas.",
         description2:
@@ -37,7 +42,7 @@ const menu = [
 ];
 ---
 
-<section class="py-32">
+<section id="Menu" class="py-32">
     <div class="container mx-auto px-2">
         <h2 class="mb-6 text-center text-white text-5xl font-semibold">
             Nuestro Menú | Sabor y Tradición en Cada Plato
@@ -53,7 +58,7 @@ const menu = [
         </p>
         <a
             class="mx-auto mt-8 block w-fit rounded-full border-2 border-muted bg-white px-6 py-4 text-sm font-semibold transition hover:border-muted-foreground"
-            href="#"
+            href="https://api.whatsapp.com/send?phone=56974956652&text=Hola!%20Me%20gustaria%20hacer%20una%20reserva%20%E2%98%BA%EF%B8%8F"
         >
             Reserva tu Mesa
         </a>
@@ -61,7 +66,7 @@ const menu = [
             {
                 menu.map((item, index) => (
                     <div class="block">
-                        <img
+                        <Image
                             src={item.image}
                             alt="placeholder"
                             class="mb-6 h-full max-h-72 w-full rounded-2xl object-cover transition hover:brightness-90 lg:max-h-96"
