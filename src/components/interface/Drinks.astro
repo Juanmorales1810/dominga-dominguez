@@ -1,26 +1,30 @@
 ---
+import { Image } from "astro:assets";
 import { Martini } from "lucide-react";
+import Image1 from "@/assets/drinks/8.jpg";
+import Image2 from "@/assets/drinks/14.jpg";
+import Image3 from "@/assets/drinks/15.jpg";
 
 const drinks = [
     {
         name: "Vinos seleccionados",
         description: "Los mejores viñedos del Valle del Elqui y Chile.",
-        image: "https://domingadominguez.cl/wp-content/uploads/2020/01/8.jpg",
+        image: Image1,
     },
     {
         name: "Coctelería de autor",
         description: "Pisco sour, mojitos, caipiriñas y más.",
-        image: "https://domingadominguez.cl/wp-content/uploads/2020/01/14.jpg",
+        image: Image2,
     },
     {
         name: "Espumantes y destilados",
         description: "Perfectos para cualquier ocasión especial.",
-        image: "https://domingadominguez.cl/wp-content/uploads/2020/01/15.jpg",
+        image: Image3,
     },
 ];
 ---
 
-<section class="py-32">
+<section id="Drinks" class="py-32">
     <div class="container mx-auto px-2">
         <div
             class="mx-auto flex max-w-screen-sm flex-col items-center gap-5 text-center"
@@ -37,7 +41,7 @@ const drinks = [
             {
                 drinks.map((drink, index) => (
                     <div class="flex flex-col ">
-                        <img
+                        <Image
                             src={drink.image}
                             alt={drink.name}
                             class="aspect-video size-full rounded-lg object-cover"
