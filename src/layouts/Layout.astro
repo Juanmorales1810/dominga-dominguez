@@ -1,6 +1,7 @@
 ---
 import Footer from "@/components/interface/Footer.astro";
 import Header from "@/components/interface/Header.astro";
+import { ClientRouter } from "astro:transitions";
 import "@/styles/global.css";
 ---
 
@@ -12,6 +13,7 @@ import "@/styles/global.css";
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="generator" content={Astro.generator} />
         <title>Dominga Dominguez</title>
+        <ClientRouter />
     </head>
     <body class="bg-slate-900 overflow-x-hidden">
         <Header />
@@ -21,7 +23,9 @@ import "@/styles/global.css";
 </html>
 
 <style>
-    html,
+    html {
+        scroll-behavior: smooth;
+    }
     body {
         margin: 0;
         width: 100%;
