@@ -56,7 +56,7 @@ const testimonials: Testimonial[] = [
 
 export default function TestimonialsPage() {
     return (
-        <section className="relative py-32">
+        <section id="Testimonials" className="relative py-32">
             <div className="absolute bottom-0 left-[-20%] right-0 top-[60%] h-[350px] w-[350px] rounded-full bg-primary opacity-50 blur-[60px]"></div>
             <div className="absolute hidden bottom-0 right-[-20%] top-[-20%] h-[500px] w-[500px] rounded-full bg-primary opacity-50 blur-[60px]"></div>
             <div className="container mx-auto flex flex-col items-center gap-4">
