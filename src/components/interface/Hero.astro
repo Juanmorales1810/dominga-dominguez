@@ -1,8 +1,13 @@
 ---
+import { Image } from "astro:assets";
 import { ArrowRight } from "lucide-react";
+import Image1 from "@/assets/hero/14.jpg";
+import Image2 from "@/assets/hero/15.jpg";
+import Image3 from "@/assets/hero/Fotos_Oficiales-57.jpg";
+import Image4 from "@/assets/hero/Fotos_Oficiales-62.jpg";
 ---
 
-<section class="mt-16">
+<section id="Hero" class="mt-16">
     <div
         class="absolute top-0 z-[-2] h-screen w-screen bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
     >
@@ -30,12 +35,13 @@ import { ArrowRight } from "lucide-react";
                     <div
                         class="flex w-full flex-col justify-center gap-2 sm:flex-row lg:justify-start"
                     >
-                        <button
+                        <a
+                            href="https://api.whatsapp.com/send?phone=56974956652&text=Hola!%20Me%20gustaria%20hacer%20una%20reserva%20%E2%98%BA%EF%B8%8F"
                             class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full sm:w-auto"
                         >
                             <ArrowRight className="w-4 h-4 mr-2" />
                             Reserva Ahora Tu Mesa
-                        </button>
+                        </a>
                     </div>
                 </div>
                 <div class="flex flex-col items-center justify-center">
@@ -43,13 +49,14 @@ import { ArrowRight } from "lucide-react";
                         <div
                             class="absolute right-[50%] top-[12%] flex aspect-square w-[24%] justify-center rounded-lg"
                         >
-                            <img
-                                src="https://domingadominguez.cl/wp-content/uploads/2020/01/32.jpg"
+                            <Image
+                                src={Image1}
                                 alt="Imagen"
                                 class="z-10 object-cover w-full h-full rounded-lg"
                             />
-                            <img
-                                src="https://domingadominguez.cl/wp-content/uploads/2020/01/32.jpg"
+                            <Image
+                                src={Image1}
+                                quality={10}
                                 alt="Imagen"
                                 class="absolute z-0 inset-0 blur-lg object-cover w-full h-full rounded-lg"
                             />
@@ -57,41 +64,44 @@ import { ArrowRight } from "lucide-react";
                         <div
                             class="absolute right-[50%] top-[36%] flex aspect-[5/6] w-[40%] justify-center"
                         >
-                            <img
-                                src="https://domingadominguez.cl/wp-content/uploads/2020/01/17.jpg"
-                                alt="Imagen"
-                                class="z-10 object-cover w-full h-full rounded-lg"
-                            />
-                            <img
-                                src="https://domingadominguez.cl/wp-content/uploads/2020/01/17.jpg"
-                                alt="Imagen"
-                                class="absolute z-0 inset-0 blur-lg object-cover w-full h-full rounded-lg"
-                            />
-                        </div>
-                        <div
-                            class="absolute bottom-[36%] left-[54%] flex aspect-[5/6] w-[40%] justify-center"
-                        >
-                            <img
-                                src="https://domingadominguez.cl/wp-content/uploads/2020/01/8.jpg"
+                            <Image
+                                src={Image3}
                                 alt="Imagen"
                                 class="z-10 object-cover w-full h-full rounded-lg object-left"
                             />
-                            <img
-                                src="https://domingadominguez.cl/wp-content/uploads/2020/01/8.jpg"
+                            <Image
+                                src={Image3}
+                                quality={10}
                                 alt="Imagen"
                                 class="absolute z-0 inset-0 blur-lg object-cover w-full h-full rounded-lg object-left"
                             />
                         </div>
                         <div
-                            class="absolute bottom-[12%] left-[54%] flex aspect-square w-[24%] justify-center"
+                            class="absolute bottom-[36%] left-[54%] flex aspect-[5/6] w-[40%] justify-center"
                         >
-                            <img
-                                src="https://domingadominguez.cl/wp-content/uploads/2020/01/20.jpg"
+                            <Image
+                                src={Image2}
                                 alt="Imagen"
                                 class="z-10 object-cover w-full h-full rounded-lg"
                             />
-                            <img
-                                src="https://domingadominguez.cl/wp-content/uploads/2020/01/20.jpg"
+                            <Image
+                                src={Image2}
+                                quality={10}
+                                alt="Imagen"
+                                class="absolute z-0 inset-0 blur-lg object-cover w-full h-full rounded-lg"
+                            />
+                        </div>
+                        <div
+                            class="absolute bottom-[12%] left-[54%] flex aspect-square w-[24%] justify-center"
+                        >
+                            <Image
+                                src={Image4}
+                                alt="Imagen"
+                                class="z-10 object-cover w-full h-full rounded-lg"
+                            />
+                            <Image
+                                src={Image4}
+                                quality={10}
                                 alt="Imagen"
                                 class="absolute z-0 inset-0 blur-lg object-cover w-full h-full rounded-lg"
                             />
