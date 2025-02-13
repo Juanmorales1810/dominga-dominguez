@@ -1,5 +1,9 @@
 ---
-import Layout from "@/layouts/Layout.astro";
+import Carnes from "@/components/interface/menu/Carnes.astro";
+import Ceviches from "@/components/interface/menu/Ceviches.astro";
+import Entradas from "@/components/interface/menu/Entradas.astro";
+import Pescados from "@/components/interface/menu/Pescados.astro";
+import LayoutMenu from "@/layouts/LayoutMenu.astro";
 
 interface MenuItem {
     title: string;
@@ -43,7 +47,12 @@ const menuItems: MenuItem[] = (await fetchMenuItems()).filter(
 ) as MenuItem[];
 ---
 
-<Layout title="Cartas">
+<LayoutMenu title="Cartas">
+    <Pescados />
+    <Carnes />
+    <Entradas />
+    <Ceviches />
+
     <section class="container mx-auto px-4 py-20">
         <h1 class="text-3xl font-bold text-center mb-8 text-white">
             Nuestro Menú
@@ -80,4 +89,4 @@ const menuItems: MenuItem[] = (await fetchMenuItems()).filter(
             }
         </div>
     </section>
-</Layout>
+</LayoutMenu>
