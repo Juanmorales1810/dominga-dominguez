@@ -1,0 +1,44 @@
+---
+import Footer from "@/components/interface/Footer.astro";
+import { ClientRouter } from "astro:transitions";
+import "@/styles/global.css";
+import HeaderMenu from "@/components/interface/menu/HeaderMenu.astro";
+---
+
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Dominga Dominguez</title>
+        <ClientRouter />
+    </head>
+    <body class="relative bg-slate-900 overflow-x-hidden">
+        <div
+            class="absolute inset-0 -z-10 h-full w-full bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:6rem_4rem]"
+        >
+            <div
+                class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_800px_at_100%_200px,#f97316,transparent)] opacity-30"
+            >
+            </div>
+        </div>
+        <HeaderMenu />
+        <main>
+            <slot />
+        </main>
+        <Footer />
+    </body>
+</html>
+
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+    body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
+</style>
