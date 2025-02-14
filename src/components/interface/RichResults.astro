@@ -1,0 +1,24 @@
+---
+// import { BOXERS } from "@/consts/boxers"
+
+/** https://developers.google.com/search/docs/appearance/structured-data/organization */
+const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    url: "https://www.domingadominguez.cl/",
+    image: "https://www.domingadominguez.cl/metadata.jpg",
+    sameAs: ["https://www.instagram.com/restaurantedomingadominguez/"],
+    logo: "https://www.domingadominguez.cl/metadata.jpg",
+    name: "Dominga Dominguez",
+    email: "ventas@domingadominguez.cl",
+    telephone: "+56974956652",
+    alternateName: "Restaurante Dominga Dominguez",
+    description:
+        "Buscamos que las personas vivan lo que es una experiencia real en torno a la comida en nuestro Restaurante Dominga Dominguez, ubicado en Peñuelas Coquimbo.",
+};
+---
+
+<script
+    type="application/ld+json"
+    set:html={JSON.stringify(organizationSchema)}
+/>
