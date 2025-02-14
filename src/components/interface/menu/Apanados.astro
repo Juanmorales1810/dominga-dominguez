@@ -1,0 +1,76 @@
+---
+interface MenuItem {
+    title: string;
+    price: number;
+    description: string;
+}
+
+const menuItems: MenuItem[] = [
+    {
+        title: "Ostiones",
+        price: 21500,
+        description: "",
+    },
+    {
+        title: "Locos",
+        price: 21500,
+        description: "",
+    },
+    {
+        title: "Anillos de Calamar",
+        price: 16500,
+        description: "",
+    },
+    {
+        title: "Camarón Ecuatoriano",
+        price: 18500,
+        description: "",
+    },
+    {
+        title: "Pinzas de Jaiba",
+        price: 21500,
+        description: "",
+    },
+    {
+        title: "Mix",
+        price: 37500,
+        description:
+            "(Ostiones, Locos, Anillos de Calamar, Camarón Ecuatoriano y Pinzas de Jaiba)",
+    },
+];
+function formatPrice(price: number): string {
+    return price
+        .toLocaleString("es-CL", { style: "currency", currency: "CLP" })
+        .replace("CLP", "")
+        .trim();
+}
+---
+
+<section>
+    <div class="container mx-auto md:px-4 py-20">
+        <h1
+            class="sticky z-20 bg-zinc-900/70 backdrop-blur-lg border-zinc-50/20 rounded-lg shadow-md py-2 top-16 w-full text-3xl font-bold text-center mb-4 text-primary"
+        >
+            Apanados
+        </h1>
+        <div class="grid gap-3 md:grid-cols-2 lg:grid-cols-3 px-4">
+            {
+                menuItems.map((item, index) => (
+                    <div class="bg-zinc-400/10 backdrop-blur-lg border-zinc-50/20 rounded-lg shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-2">
+                                <h2 class="text-xl font-semibold text-white">
+                                    {item.title}
+                                </h2>
+                                <span class="text-lg font-bold text-primary">
+                                    {formatPrice(item.price)}
+                                </span>
+                            </div>
+                            <p class="text-zinc-300">{item.description}</p>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
