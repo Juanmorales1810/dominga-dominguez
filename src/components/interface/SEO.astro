@@ -1,0 +1,88 @@
+---
+import RichResults from "@/components/interface/RichResults.astro";
+
+interface Preload {
+    as: string;
+    href: string;
+    type: string;
+    rel?: "preload" | "prefetch";
+    crossorigin?: string;
+}
+
+interface Props {
+    title: string;
+    description: string;
+    preload?: Array<Preload>;
+    canonical?: string;
+    image?: string;
+}
+
+const {
+    title,
+    description,
+    preload,
+    canonical,
+    image = "https://www.domingadominguez.cl/metadata.jpg",
+} = Astro.props as Props;
+---
+
+<title>{title}</title>
+
+<meta charset="UTF-8" />
+<meta name="description" content={description} />
+
+{
+    preload?.map(({ href, as, type, rel = "preload", crossorigin }) => (
+        <link {rel} {href} {as} {type} {crossorigin} />
+    ))
+}
+
+<link rel="canonical" href={canonical} />
+<meta name="viewport" content="width=device-width" />
+<meta name="theme-color" content="#0f172a" />
+
+<meta
+    name="keywords"
+    content="Restaurante, Dominga Dominguez, Peñuelas, Coquimbo, Comida, Bebida, Reservas, Eventos, Celebraciones, Cumpleaños, Aniversarios, Matrimonios, Graduaciones, Empresas, Empresarial"
+/>
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={new URL(image, Astro.url)} />
+
+<meta property="og:image" content={new URL(image, Astro.url)} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:site_name" content="El Rinconcito" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="es_ES" />
+
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow" />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" href="/favicon.svg" />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta name="msapplication-config" content="/browserconfig.xml" />
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z08J3JBV1W"
+></script>
+<script>
+    //@ts-ignore
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        //@ts-ignore
+        dataLayer.push(arguments);
+    }
+    //@ts-ignore
+    gtag("js", new Date());
+    //@ts-ignore
+    gtag("config", "G-Z08J3JBV1W");
+</script>
+
+<!-- <script is:inline src="/registerSW.js"></script> -->
+<!-- <link rel="manifest" href="/manifest.webmanifest" /> -->
+<RichResults />
