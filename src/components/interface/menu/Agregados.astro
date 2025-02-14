@@ -1,0 +1,158 @@
+---
+import { PlusCircle } from "lucide-react";
+
+interface MenuItem {
+    title: string;
+    price: number;
+    description: string;
+}
+
+const menuItems: MenuItem[] = [
+    {
+        title: "Surtida",
+        price: 4800,
+        description: "",
+    },
+    {
+        title: "Chilena",
+        price: 3800,
+        description: "",
+    },
+    {
+        title: "Tomate",
+        price: 3200,
+        description: "",
+    },
+    {
+        title: "Tomate - Palta",
+        price: 4800,
+        description: "",
+    },
+    {
+        title: "Apio - Palta",
+        price: 4800,
+        description: "",
+    },
+    {
+        title: "Apio - Palta - Palmito",
+        price: 5400,
+        description: "",
+    },
+    {
+        title: "Palta",
+        price: 4500,
+        description: "",
+    },
+    {
+        title: "Tomate - Palta - Palmito",
+        price: 5800,
+        description: "",
+    },
+    {
+        title: "Porotos Verdes",
+        price: 3500,
+        description: "",
+    },
+    {
+        title: "Mix de Hojas verdes",
+        price: 4500,
+        description: "",
+    },
+    {
+        title: "Verduras Salteadas",
+        price: 4200,
+        description: "",
+    },
+    {
+        title: "Papas al Romero",
+        price: 3500,
+        description: "",
+    },
+    {
+        title: "Papas Mayo",
+        price: 3500,
+        description: "",
+    },
+    {
+        title: "Papas Fritas",
+        price: 3800,
+        description: "",
+    },
+    {
+        title: "Papas Salteadas",
+        price: 3500,
+        description: "",
+    },
+    {
+        title: "Papas a la Crema",
+        price: 3800,
+        description: "",
+    },
+    {
+        title: "Champiñones Salteados",
+        price: 4500,
+        description: "",
+    },
+    {
+        title: "Champiñones a la crema",
+        price: 4800,
+        description: "",
+    },
+    {
+        title: "Choclo a la crema",
+        price: 3800,
+        description: "",
+    },
+    {
+        title: "Arroz",
+        price: 3800,
+        description: "(Arriero - Cilantro - Curry)",
+    },
+    {
+        title: "Espinaca a la crema",
+        price: 3800,
+        description: "",
+    },
+    {
+        title: "A lo Pobre",
+        price: 5200,
+        description: "",
+    },
+];
+function formatPrice(price: number): string {
+    return price
+        .toLocaleString("es-CL", { style: "currency", currency: "CLP" })
+        .replace("CLP", "")
+        .trim();
+}
+---
+
+<section>
+    <div class="container mx-auto md:px-4 py-20">
+        <h1
+            class="sticky z-20 bg-zinc-900/70 backdrop-blur-lg border-zinc-50/20 rounded-lg shadow-md py-2 top-16 w-full text-3xl font-bold text-center mb-4 text-primary"
+        >
+            Agregados
+            <PlusCircle size={32} className="inline-block" />
+        </h1>
+        <div class="grid gap-3 md:grid-cols-2 lg:grid-cols-3 px-4">
+            {
+                menuItems.map((item, index) => (
+                    <div class="bg-zinc-400/10 backdrop-blur-lg border-zinc-50/20 rounded-lg shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-2">
+                                <h2 class="text-xl font-semibold text-white">
+                                    {item.title}
+                                </h2>
+                                <span class="text-lg font-bold text-primary">
+                                    {formatPrice(item.price)}
+                                </span>
+                            </div>
+                            <p class="text-zinc-300">{item.description}</p>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
