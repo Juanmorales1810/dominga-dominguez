@@ -1,0 +1,58 @@
+---
+import { Wine } from "lucide-react";
+
+interface MenuItem {
+    title: string;
+    price: number;
+    description: string;
+}
+
+const menuItems: MenuItem[] = [
+    {
+        title: "Cabernet Sauvignon 1865",
+        price: 19900,
+        description: "",
+    },
+    {
+        title: "Las Encinas Blanco Seco",
+        price: 14200,
+        description: "",
+    },
+];
+function formatPrice(price: number): string {
+    return price
+        .toLocaleString("es-CL", { style: "currency", currency: "CLP" })
+        .replace("CLP", "")
+        .trim();
+}
+---
+
+<section>
+    <div class="container mx-auto md:px-4 py-10">
+        <h1
+            class="sticky z-20 bg-zinc-900/70 backdrop-blur-lg border-zinc-50/20 rounded-lg shadow-md py-2 top-16 w-full text-3xl font-bold text-center mb-4 text-primary"
+        >
+            San Pedro
+            <Wine size={32} className="inline-block mb-1.5" />
+        </h1>
+        <div class="grid gap-3 md:grid-cols-2 lg:grid-cols-3 px-4">
+            {
+                menuItems.map((item, index) => (
+                    <div class="bg-zinc-400/10 backdrop-blur-lg border-zinc-50/20 rounded-lg shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-2">
+                                <h2 class="text-xl font-semibold text-white">
+                                    {item.title}
+                                </h2>
+                                <span class="text-lg font-bold text-primary">
+                                    {formatPrice(item.price)}
+                                </span>
+                            </div>
+                            <p class="text-zinc-300">{item.description}</p>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>

@@ -1,0 +1,66 @@
+---
+interface MenuItem {
+    title: string;
+    price: number;
+    description: string;
+}
+
+const menuItems: MenuItem[] = [
+    {
+        title: "Brandy Miguel Torres",
+        price: 7500,
+        description: "20 años",
+    },
+    {
+        title: "Brandy Miguel Torres",
+        price: 13500,
+        description: "30 años Jaime I",
+    },
+];
+function formatPrice(price: number): string {
+    return price
+        .toLocaleString("es-CL", { style: "currency", currency: "CLP" })
+        .replace("CLP", "")
+        .trim();
+}
+---
+
+<section>
+    <div class="container mx-auto md:px-4 py-10">
+        <h1
+            class="sticky z-20 bg-zinc-900/70 backdrop-blur-lg border-zinc-50/20 rounded-lg shadow-md py-2 top-16 w-full text-3xl font-bold text-center mb-4 text-primary"
+        >
+            Brandy
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="CurrentColor"
+                width="32px"
+                height="32px"
+                viewBox="0 0 256 256"
+                class="inline-block mb-1.5"
+                ><path
+                    d="M224,88a95.63426,95.63426,0,0,0-15.53223-52.37207,7.99982,7.99982,0,0,0-6.70117-3.63086H54.2334A7.99954,7.99954,0,0,0,47.53223,35.627,96.014,96.014,0,0,0,120,183.66406V216H88a8,8,0,0,0,0,16h80a8,8,0,0,0,0-16H136V183.66406A96.127,96.127,0,0,0,224,88ZM48.398,80A79.53944,79.53944,0,0,1,58.70312,47.99707H197.29736A79.54855,79.54855,0,0,1,207.60205,80Z"
+                ></path></svg
+            >
+        </h1>
+        <div class="grid gap-3 md:grid-cols-2 lg:grid-cols-3 px-4">
+            {
+                menuItems.map((item, index) => (
+                    <div class="bg-zinc-400/10 backdrop-blur-lg border-zinc-50/20 rounded-lg shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-2">
+                                <h2 class="text-xl font-semibold text-white">
+                                    {item.title}
+                                </h2>
+                                <span class="text-lg font-bold text-primary">
+                                    {formatPrice(item.price)}
+                                </span>
+                            </div>
+                            <p class="text-zinc-300">{item.description}</p>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>

@@ -1,0 +1,87 @@
+---
+import { Beer, Wine } from "lucide-react";
+
+interface MenuItem {
+    title: string;
+    price: number;
+    description: string;
+}
+
+const menuItems: MenuItem[] = [
+    {
+        title: "Senda Real",
+        price: 4200,
+        description: "",
+    },
+    {
+        title: "Olmeca",
+        price: 4500,
+        description: "",
+    },
+    {
+        title: "José Cuervo",
+        price: 4800,
+        description: "",
+    },
+];
+function formatPrice(price: number): string {
+    return price
+        .toLocaleString("es-CL", { style: "currency", currency: "CLP" })
+        .replace("CLP", "")
+        .trim();
+}
+---
+
+<section>
+    <div class="container mx-auto md:px-4 py-10">
+        <h1
+            class="sticky z-20 bg-zinc-900/70 backdrop-blur-lg border-zinc-50/20 rounded-lg shadow-md py-2 top-16 w-full text-3xl font-bold text-center mb-4 text-primary"
+        >
+            Tequila
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="CurrentColor"
+                width="32px"
+                height="32px"
+                viewBox="0 0 297 297"
+                class="inline-block mb-1.5"
+                ><g>
+                    <path
+                        d="M111.917,184.921c8.462-9.85,22.123-15.839,36.583-15.839c14.459,0,28.12,5.99,36.582,15.839h52.64v-8.822   c0-21.24-14.88-45.316-33.874-54.812l-6.691-3.346c-4.633-2.316-9.683-4.549-14.872-6.583V89.102h-67.569v22.257   c-5.188,2.033-10.237,4.267-14.873,6.583l-6.689,3.345c-18.996,9.498-33.876,33.575-33.876,54.812v8.822H111.917z"
+                    ></path>
+                    <path
+                        d="M169.471,8.902C164.156,3.418,156.722,0,148.5,0s-15.656,3.418-20.971,8.902H169.471z"
+                    ></path>
+                    <path
+                        d="M108.901,23.519c-3.087,0-6.002,1.422-7.901,3.855c-1.9,2.434-2.573,5.607-1.824,8.601l7.92,31.68   c0.941,3.764,3.943,6.572,7.62,7.362v0.051h67.569v-0.051c3.676-0.79,6.679-3.598,7.62-7.362l7.92-31.68   c0.749-2.995,0.076-6.168-1.824-8.601c-1.899-2.433-4.815-3.855-7.902-3.855H108.901z"
+                    ></path>
+                    <path
+                        d="M185.082,230.635c-8.462,9.85-22.124,15.839-36.582,15.839c-14.46,0-28.121-5.99-36.583-15.839H59.278v24.661   c0,22.996,18.708,41.704,41.704,41.704h95.038c22.996,0,41.704-18.708,41.704-41.704v-24.661H185.082z"
+                    ></path>
+                    <path
+                        d="M175.91,195.962c-5.544-7.923-16.047-12.845-27.41-12.845c-11.364,0-21.867,4.921-27.41,12.845   c-1.313,1.877-3.459,2.995-5.75,2.995H59.779V216.6h55.561c2.291,0,4.437,1.118,5.75,2.995c5.543,7.923,16.046,12.844,27.41,12.844   c11.363,0,21.866-4.921,27.41-12.846c1.313-1.876,3.46-2.994,5.75-2.994h55.561v-17.645H181.66   C179.37,198.956,177.223,197.838,175.91,195.962z"
+                    ></path>
+                </g></svg
+            >
+        </h1>
+        <div class="grid gap-3 md:grid-cols-2 lg:grid-cols-3 px-4">
+            {
+                menuItems.map((item, index) => (
+                    <div class="bg-zinc-400/10 backdrop-blur-lg border-zinc-50/20 rounded-lg shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-2">
+                                <h2 class="text-xl font-semibold text-white">
+                                    {item.title}
+                                </h2>
+                                <span class="text-lg font-bold text-primary">
+                                    {formatPrice(item.price)}
+                                </span>
+                            </div>
+                            <p class="text-zinc-300">{item.description}</p>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>

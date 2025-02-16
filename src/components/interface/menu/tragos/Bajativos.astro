@@ -1,0 +1,101 @@
+---
+interface MenuItem {
+    title: string;
+    price: number;
+    description: string;
+}
+
+const menuItems: MenuItem[] = [
+    {
+        title: "Amaretto Disaronno",
+        price: 7200,
+        description: "",
+    },
+    {
+        title: "Amaretto nacional",
+        price: 3500,
+        description: "",
+    },
+    {
+        title: "Menta",
+        price: 3500,
+        description: "",
+    },
+    {
+        title: "Manzanilla",
+        price: 3500,
+        description: "",
+    },
+    {
+        title: "Araucano",
+        price: 4500,
+        description: "",
+    },
+    {
+        title: "Limoncello",
+        price: 4500,
+        description: "",
+    },
+    {
+        title: "Frangelico",
+        price: 4500,
+        description: "",
+    },
+    {
+        title: "Jagermeister",
+        price: 4800,
+        description: "",
+    },
+    {
+        title: "Drambuie",
+        price: 5800,
+        description: "",
+    },
+];
+function formatPrice(price: number): string {
+    return price
+        .toLocaleString("es-CL", { style: "currency", currency: "CLP" })
+        .replace("CLP", "")
+        .trim();
+}
+---
+
+<section>
+    <div class="container mx-auto md:px-4 py-10">
+        <h1
+            class="sticky z-20 bg-zinc-900/70 backdrop-blur-lg border-zinc-50/20 rounded-lg shadow-md py-2 top-16 w-full text-3xl font-bold text-center mb-4 text-primary"
+        >
+            Bajativos
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="CurrentColor"
+                width="32px"
+                height="32px"
+                viewBox="0 0 16 16"
+                class="inline-block"
+                ><path
+                    d="m11.37 9.85.87-6.4a1.22 1.22 0 0 0-.3-1A1.24 1.24 0 0 0 11 2H2.85a1.24 1.24 0 0 0-1.23 1.41l1.15 8.48A1.27 1.27 0 0 0 4 13h4.84a4.41 4.41 0 0 0 2.66 1h.14a3.9 3.9 0 0 0 2.76-1.12zM11 3.25l-.15 1.09H3l-.15-1.09zM7.23 9.72a4.28 4.28 0 0 0 .57 2H4l-.83-6.13h7.47l-.42 3.11-1.87-1.87a3.83 3.83 0 0 0-1.12 2.89zm4.31 3a3.18 3.18 0 0 1-2.12-.94 3.21 3.21 0 0 1-.95-2.13 2.71 2.71 0 0 1 .11-.86l1.91 1.92 1.91 1.91a2.73 2.73 0 0 1-.76.1z"
+                ></path></svg
+            >
+        </h1>
+        <div class="grid gap-3 md:grid-cols-2 lg:grid-cols-3 px-4">
+            {
+                menuItems.map((item, index) => (
+                    <div class="bg-zinc-400/10 backdrop-blur-lg border-zinc-50/20 rounded-lg shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-2">
+                                <h2 class="text-xl font-semibold text-white">
+                                    {item.title}
+                                </h2>
+                                <span class="text-lg font-bold text-primary">
+                                    {formatPrice(item.price)}
+                                </span>
+                            </div>
+                            <p class="text-zinc-300">{item.description}</p>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
