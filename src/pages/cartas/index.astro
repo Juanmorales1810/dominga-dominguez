@@ -1,0 +1,136 @@
+---
+import LayoutMenu from "@/layouts/LayoutMenu.astro";
+import { Martini, NotebookText } from "lucide-react";
+---
+
+<LayoutMenu
+    title="Menu - Carta de Tragos | Dominga Dominguez"
+    description="Carta de tragos del restaurante"
+    canonical="https://www.domingadominguez.cl/cartas/carta-tragos"
+>
+    <section class="py-32">
+        <div class="container mx-auto px-2">
+            <div
+                class="relative flex flex-col items-start justify-between gap-5 md:flex-row md:gap-0"
+            >
+                <!-- <img
+                    src="https://images.unsplash.com/photo-1653288973812-81d1951b8127?q=80&w=2022&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="img"
+                    class="absolute left-0 top-0 z-[-1] h-full w-full rounded-2xl object-cover md:block"
+                /> -->
+                <a
+                    href="/cartas/carta-menu"
+                    class="group relative flex h-[400px] w-full cursor-pointer flex-col items-start gap-8 p-10 transition-all duration-300 rounded-2xl md:w-1/2 hover:md:w-2/3 md:h-[600px]"
+                >
+                    <img
+                        src="/gallery/gallery32.webp"
+                        alt="Banner"
+                        class="absolute left-0 top-0 z-[-1] h-full w-full rounded-2xl object-cover md:block"
+                    />
+                    <div
+                        class="absolute left-0 top-0 z-[-1] h-full w-full rounded-2xl bg-black/50 transition-all duration-300 group-hover:bg-black/70"
+                    >
+                    </div>
+                    <button
+                        class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border-input hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 rounded-full border-0 bg-white bg-opacity-30 text-white"
+                    >
+                        <NotebookText size={20} />
+                    </button>
+                    <h1 class="text-5xl text-primary font-bold drop-shadow-xl">
+                        Menu de Alimentos
+                    </h1>
+                    <p class="max-w-80 text-left text-white">
+                        Explora nuestra carta de alimentos y disfruta de una
+                        amplia variedad de platos y sabores.
+                    </p>
+                    <button
+                        class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 rounded-full text-white outline-none transition-all duration-300 bg-primary"
+                    >
+                        Ver Carta
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="lucide lucide-arrow-up-right"
+                            ><path d="M7 7h10v10"></path><path d="M7 17 17 7"
+                            ></path>
+                        </svg>
+                    </button>
+                </a>
+                <div
+                    class="relative hidden h-[600px] w-5 bg-transparent md:block"
+                >
+                    <div
+                        class="absolute left-[-40px] top-0 h-[40px] w-[40px] rounded-[1rem] shadow-[10px_-10px_0_0_transparent]"
+                    >
+                    </div>
+                    <div
+                        class="absolute right-[-40px] top-0 h-[40px] w-[40px] rounded-[1rem] shadow-[-10px_-10px_0_0_transparent]"
+                    >
+                    </div>
+                    <div
+                        class="absolute bottom-0 left-[-40px] h-[40px] w-[40px] rounded-[1rem] shadow-[10px_10px_0_0_transparent]"
+                    >
+                    </div>
+                    <div
+                        class="absolute bottom-0 right-[-40px] h-[40px] w-[40px] rounded-[1rem] shadow-[-10px_10px_0_0_transparent]"
+                    >
+                    </div>
+                </div>
+                <a
+                    href="/cartas/carta-tragos"
+                    class="group relative flex h-[400px] w-full cursor-pointer flex-col items-end gap-8 p-10 transition-all duration-300 rounded-2xl md:w-1/2 hover:md:w-2/3 md:h-[600px]"
+                >
+                    <img
+                        src="/gallery/gallery2.webp"
+                        alt="Banner"
+                        class="absolute left-0 top-0 z-[-1] h-full w-full rounded-2xl object-cover md:block"
+                    />
+                    <div
+                        class="absolute left-0 top-0 z-[-1] h-full w-full rounded-2xl bg-black/50 transition-all duration-300 group-hover:bg-black/70"
+                    >
+                    </div>
+                    <button
+                        class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border-input hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 rounded-full border-0 bg-white bg-opacity-30 text-white"
+                    >
+                        <Martini size={20} />
+                    </button>
+                    <h1
+                        class="text-right text-5xl text-primary font-bold md:text-left"
+                    >
+                        Menu de Bebidas
+                    </h1>
+                    <p class="max-w-80 text-right text-white md:text-left">
+                        Descubre nuestra carta de bebidas y disfruta de una
+                        amplia variedad de tragos y sabores.
+                    </p>
+                    <button
+                        class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 rounded-full bg-primary text-white outline-none transition-all duration-300"
+                    >
+                        Ver Carta
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="lucide lucide-arrow-up-right"
+                            ><path d="M7 7h10v10"></path><path d="M7 17 17 7"
+                            ></path></svg
+                        >
+                    </button>
+                </a>
+            </div>
+        </div>
+    </section>
+</LayoutMenu>
