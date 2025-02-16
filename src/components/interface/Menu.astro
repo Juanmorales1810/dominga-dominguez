@@ -3,41 +3,41 @@ import { Image } from "astro:assets";
 import { Utensils } from "lucide-react";
 import Image1 from "@/assets/menu/Fotos_Oficiales-50.jpg";
 import Image2 from "@/assets/menu/Fotos_Oficiales-48.jpg";
-import Image3 from "@/assets/menu/Fotos_Oficiales-81.jpg";
+import Image3 from "@/assets/menu/Fotos_Oficiales-24.jpg";
 import Image4 from "@/assets/menu/Fotos_Oficiales-63.jpg";
 
 const menu = [
     {
-        title: "Entradas y Aperitivos",
+        title: "Parmesanos",
         image: Image1,
         description1:
-            "Ostiones a la Parmesana | Gratinados con queso parmesano y mantequilla.",
+            "Machas a la Parmesana | Suaves y frescas machas gratinadas con queso parmesano derretido, mantequilla y un toque de vino blanco. Un clásico de la cocina chilena, ideal para compartir.",
         description2:
-            "Ceviche de Camarón y Reineta | Con limón, ají verde y cilantro fresco.",
+            "Ostiones a la Parmesana | Delicados ostiones servidos en su concha, gratinados con una capa de queso parmesano dorado y un toque de mantequilla para realzar su sabor marino.",
     },
     {
         title: "Pescados Seleccionados",
         image: Image2,
         description1:
-            "Reineta a la Mantequilla de Hierbas | Con puré rústico y ensalada verde.",
+            "Congrio Medallón | Filete de congrio servido en un medallón jugoso, cocinado a la parrilla para resaltar su sabor suave y natural, acompañado de una guarnición a elección.",
         description2:
-            "Congrio Frito o a la Plancha | Con papas rústicas y salsa de la casa.",
-    },
-    {
-        title: "Cortes Premium",
-        image: Image3,
-        description1:
-            "Asado de Tira en Larga Cocción | Con puré de zapallo y ensalada verde.",
-        description2:
-            "Lomo Vetado a la Parrilla | Acompañado de chimichurri casero.",
+            "Congrio Frito | Filete de congrio frito en una crujiente tempura dorada, manteniendo su interior jugoso y tierno. Perfecto para quienes disfrutan de un pescado con textura crujiente y gran sabor.",
     },
     {
         title: "Especialidades de la Casa",
         image: Image4,
         description1:
-            "Paila Marina | Caldo de mariscos frescos con hierbas aromáticas.",
+            "Risotto Dominga (Camarón - Palta) | Cremoso risotto elaborado con un sofrito delicado, camarones frescos y un toque de palta que aporta suavidad y frescura. Una combinación perfecta entre mar y tierra.",
         description2:
-            "Chupe de Jaiba | Cremoso, gratinado con queso parmesano.",
+            "Fetuccini con Filete de Carne a la Crema | Pasta fresca bañada en una salsa de crema suave, con filete de carne jugoso en finos cortes, ofreciendo un plato con gran textura y sabor equilibrado.",
+    },
+    {
+        title: "Salsas Verdes",
+        image: Image3,
+        description1:
+            "Erizos en Salsa Verde | Erizos frescos servidos en una salsa verde intensa, preparada con un aliño especial que resalta el sabor del mar. Una explosión de sabor y tradición.",
+        description2:
+            "Ostiones en Salsa Verde | Ostiones bañados en una salsa de perejil y ajo, con notas cítricas que potencian su frescura. Una alternativa perfecta para quienes buscan un plato con carácter marino.",
     },
 ];
 ---
@@ -74,14 +74,18 @@ const menu = [
                         <h6 class="mb-3 text-lg text-white font-semibold">
                             {item.title}
                         </h6>
-                        <p class="text-sm text-zinc-300 flex items-center gap-2">
+                        <div class="flex justify-center items-center gap-2 mb-3">
                             <Utensils className="size-5 text-primary" />
-                            {item.description1}
-                        </p>
-                        <p class="text-sm text-zinc-300 flex items-center gap-2">
+                            <p class="text-sm text-zinc-300 flex items-center text-balance gap-2 w-[90%]">
+                                {item.description1}
+                            </p>
+                        </div>
+                        <div class="flex justify-center items-center gap-2">
                             <Utensils className="size-5 text-primary" />
-                            {item.description2}
-                        </p>
+                            <p class="text-sm text-zinc-300 flex items-center text-balance gap-2 w-[90%]">
+                                {item.description2}
+                            </p>
+                        </div>
                     </div>
                 ))
             }
