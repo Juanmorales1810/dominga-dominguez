@@ -1,0 +1,69 @@
+---
+import Aperitivos from "@/components/interface/menu/tragos/Aperitivos.astro";
+import Bajativos from "@/components/interface/menu/tragos/Bajativos.astro";
+import Bebidas from "@/components/interface/menu/tragos/Bebidas.astro";
+import BeerInternacional from "@/components/interface/menu/tragos/BeerInternacional.astro";
+import BeerNacional from "@/components/interface/menu/tragos/BeerNacional.astro";
+import BeerSinAlchol from "@/components/interface/menu/tragos/BeerSinAlchol.astro";
+import Brandy from "@/components/interface/menu/tragos/Brandy.astro";
+import CastilloMolina from "@/components/interface/menu/tragos/CastilloMolina.astro";
+import CavaDominguez from "@/components/interface/menu/tragos/CavaDominguez.astro";
+import Energizante from "@/components/interface/menu/tragos/Energizante.astro";
+import Espumante from "@/components/interface/menu/tragos/Espumante.astro";
+import Gin from "@/components/interface/menu/tragos/Gin.astro";
+import GranTarapaca from "@/components/interface/menu/tragos/GranTarapaca.astro";
+import Jugos from "@/components/interface/menu/tragos/Jugos.astro";
+import Leyenda from "@/components/interface/menu/tragos/Leyenda.astro";
+import MisionesRengo from "@/components/interface/menu/tragos/MisionesRengo.astro";
+import Piscos from "@/components/interface/menu/tragos/Piscos.astro";
+import Ron from "@/components/interface/menu/tragos/Ron.astro";
+import SanPedro from "@/components/interface/menu/tragos/SanPedro.astro";
+import Tequila from "@/components/interface/menu/tragos/Tequila.astro";
+import Tololo from "@/components/interface/menu/tragos/Tololo.astro";
+import Tragos from "@/components/interface/menu/tragos/Tragos.astro";
+import Vodka from "@/components/interface/menu/tragos/Vodka.astro";
+import Whisky from "@/components/interface/menu/tragos/Whisky.astro";
+import LayoutMenu from "@/layouts/LayoutMenu.astro";
+import { Info } from "lucide-react";
+---
+
+<LayoutMenu
+    title="Menu - Carta de Tragos | Dominga Dominguez"
+    description="Carta de tragos del restaurante"
+    canonical="https://www.domingadominguez.cl/cartas/carta-tragos"
+>
+    <section class="container mx-auto py-20">
+        <h1 class="text-3xl font-bold text-center mb-8 text-white">
+            Carta de Tragos
+        </h1>
+        <p class="text-center text-zinc-300 text-pretty px-2 mb-8">
+            <Info size={24} className="inline-block mr-2" />
+            Estimado Cliente si desea solicitar factura, la cancelación debe de ser
+            en efectivo o transferencia. Gracias.
+        </p>
+        <Bebidas />
+        <Jugos />
+        <Energizante />
+        <BeerNacional />
+        <BeerInternacional />
+        <BeerSinAlchol />
+        <Espumante />
+        <Aperitivos />
+        <Tequila />
+        <Tragos />
+        <Piscos />
+        <Tololo />
+        <CastilloMolina />
+        <MisionesRengo />
+        <GranTarapaca />
+        <Leyenda />
+        <SanPedro />
+        <CavaDominguez />
+        <Brandy />
+        <Whisky />
+        <Ron />
+        <Vodka />
+        <Gin />
+        <Bajativos />
+    </section>
+</LayoutMenu>
