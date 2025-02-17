@@ -1,20 +1,10 @@
-# Astro Starter Kit: Basics
+# Dominga Dominguez
 
-```sh
-npm create astro@latest -- --template basics
-```
+Dominga Dominguez es un proyecto basado en Astro Starter Kit: Basics. Este proyecto proporciona una estructura básica para comenzar a trabajar con Astro, una herramienta moderna para construir sitios web rápidos y optimizados.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Estructura del Proyecto
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
+Dentro del proyecto, encontrarás las siguientes carpetas y archivos:
 
 ```text
 /
@@ -28,21 +18,39 @@ Inside of your Astro project, you'll see the following folders and files:
 └── package.json
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+Para aprender más sobre la estructura de carpetas de un proyecto Astro, consulta [nuestra guía sobre la estructura del proyecto](https://docs.astro.build/en/basics/project-structure/).
 
-## 🧞 Commands
+## Comandos
 
-All commands are run from the root of the project, from a terminal:
+Todos los comandos se ejecutan desde la raíz del proyecto, desde una terminal:
 
-| Command                   | Action                                           |
+| Comando                   | Acción                                           |
 | :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+| `npm install`             | Instala las dependencias                         |
+| `npm run dev`             | Inicia el servidor de desarrollo local en `localhost:4321` |
+| `npm run build`           | Compila tu sitio de producción a `./dist/`       |
+| `npm run preview`         | Previsualiza tu compilación localmente, antes de desplegar |
+| `npm run astro ...`       | Ejecuta comandos CLI como `astro add`, `astro check` |
+| `npm run astro -- --help` | Obtén ayuda utilizando la CLI de Astro           |
 
-## 👀 Want to learn more?
+## Recursos Adicionales
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- [Documentación de Astro](https://docs.astro.build)
+- [Servidor de Discord de Astro](https://astro.build/chat)
+
+## Sección de Contacto
+
+El proyecto incluye una sección de "Contáctenos" en la página de destino. Esta sección permite a los usuarios ponerse en contacto con la empresa para obtener más información o asistencia.
+
+## Llamado a la Acción
+
+La página de destino del sitio web incluye un llamado a la acción para que los usuarios se suscriban al boletín de noticias. Esto ayuda a mantener a los usuarios informados sobre las últimas actualizaciones y noticias de la empresa.
+
+## Diseño Moderno
+
+El diseño del sitio web utiliza el color de la marca, que es amarillo, y sigue las preferencias y valores del cliente para ofrecer una experiencia de usuario atractiva y moderna.
+
+## Licencia
+
+Este proyecto está licenciado bajo la [licencia MIT](https://github.com/Juanmorales1810/dominga-dominguez/blob/main/LICENSE).
+
