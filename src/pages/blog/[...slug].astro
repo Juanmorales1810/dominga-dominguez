@@ -1,0 +1,47 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { type CollectionEntry, getCollection } from "astro:content";
+
+import { render } from "astro:content";
+
+export async function getStaticPaths() {
+    const posts = await getCollection("blog");
+    return posts.map((post) => ({
+        params: { slug: post.id },
+        props: post,
+    }));
+}
+type Props = CollectionEntry<"blog">;
+
+const post = Astro.props;
+const { Content } = await render(post);
+---
+
+<Layout title={post.data.title} description={post.data.description}>
+    <section class="relative py-10 px-4">
+        <div
+            class="absolute inset-0 -z-10 h-full w-full bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:6rem_4rem]"
+        >
+            <div
+                class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_800px_at_100%_200px,#f97316,transparent)] opacity-30"
+            >
+            </div>
+        </div>
+        <div class="container max-w-5xl mx-auto mt-16">
+            <img
+                class="aspect-[10/7] object-cover rounded-xl md:aspect-[16/7] h-[440px] mx-auto"
+                src={post.data.heroImage}
+                alt={post.data.title}
+                transition:name={`img${post.id}`}
+            />
+            <h1
+                class="text-center text-white text-5xl py-8 font-bold drop-shadow-[0_0px_7px_rgba(255,255,255,0.35)]"
+            >
+                {post.data.title}
+            </h1>
+            <div class="prose prose-invert mx-auto py-6 max-w-4xl">
+                <Content />
+            </div>
+        </div>
+    </section>
+</Layout>
