@@ -1,4 +1,3 @@
-export const prerender = false
 import { useEffect, useState } from "react";
 import Carnes from "./menu/Carnes";
 import Pescados from "./menu/Pescados";
