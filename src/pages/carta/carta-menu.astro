@@ -1,8 +1,10 @@
 ---
-export const prerender = false;
 import LayoutMenu from "@/layouts/LayoutMenu.astro";
 import { Info } from "lucide-react";
 import MenuComponent from "@/components/interface/menuAlimentos";
+import { setCache } from "@/lib/cache";
+
+setCache.short(Astro);
 ---
 
 <LayoutMenu
