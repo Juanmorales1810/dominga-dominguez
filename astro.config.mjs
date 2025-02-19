@@ -19,6 +19,6 @@ export default defineConfig({
         react(),
         sitemap(),
     ],
-    output: "server",
+    output: "static",
     adapter: vercel(),
 });
