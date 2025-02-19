@@ -9,16 +9,16 @@ import vercel from "@astrojs/vercel";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://www.domingadominguez.cl",
+    site: "https://www.domingadominguez.cl",
 
-  integrations: [
-      tailwind({
-          applyBaseStyles: false,
-      }),
-      ,
-      react(),
-      sitemap(),
-  ],
-
-  adapter: vercel(),
+    integrations: [
+        tailwind({
+            applyBaseStyles: false,
+        }),
+        ,
+        react(),
+        sitemap(),
+    ],
+    output: "server",
+    adapter: vercel(),
 });
