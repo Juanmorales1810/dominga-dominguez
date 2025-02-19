@@ -46,16 +46,32 @@ interface MenuData {
 }
 
 export default function MenuComponent() {
-    const [menuData, setMenuData] = useState(null as MenuData | null);
+    const [menuData, setMenuData] = useState<MenuData | null>(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        fetch("/api/menu")
-            .then((response) => response.json())
-            .then((data) => setMenuData(data))
-            .catch((error) => console.error("Error al cargar el menú:", error));
+        const fetchMenuData = async () => {
+            try {
+                const response = await fetch("/api/menu");
+                if (!response.ok) {
+                    throw new Error(`Error: ${response.statusText}`);
+                }
+                const data = await response.json();
+                setMenuData(data);
+            } catch (error) {
+                setError((error as Error).message);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchMenuData();
     }, []);
 
-    if (!menuData) return <LoaderCircle size={64} className="m-auto animate-spin text-primary" />;
+    if (loading) return <LoaderCircle size={64} className="m-auto animate-spin text-primary" />;
+    if (error) return <p className="text-center text-red-500">Error al cargar el menú: {error}</p>;
+
 
     console.log(menuData);
 
