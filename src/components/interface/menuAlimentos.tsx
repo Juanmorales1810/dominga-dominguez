@@ -56,6 +56,8 @@ export default function MenuComponent() {
 
     if (!menuData) return <LoaderCircle size={64} className="m-auto animate-spin text-primary" />;
 
+    console.log(menuData);
+
     return (
         <>
             <Pescados menuItems={menuData.pescados} />
