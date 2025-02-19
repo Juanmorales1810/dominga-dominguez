@@ -12,6 +12,7 @@
         "@astrojs/react": "^4.2.0",
         "@astrojs/sitemap": "^3.2.1",
         "@astrojs/tailwind": "^6.0.0",
+        "@astrojs/vercel": "^8.0.7",
         "@hookform/resolvers": "^3.10.0",
         "@radix-ui/react-avatar": "^1.1.2",
         "@radix-ui/react-dialog": "^1.1.6",
