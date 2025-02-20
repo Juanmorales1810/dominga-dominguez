@@ -7,21 +7,23 @@ interface MenuItem {
 interface Props {
     menuItems: Array<MenuItem>;
 }
+
 function formatPrice(price: number): string {
     return price
         .toLocaleString("es-CL", { style: "currency", currency: "CLP" })
         .replace("CLP", "")
         .trim();
 }
+
 const { menuItems } = Astro.props as Props;
 ---
 
 <section>
-    <div class="container mx-auto md:px-4 py-10">
+    <div class="container mx-auto md:px-4 py-20">
         <h1
             class="sticky z-20 bg-zinc-900/70 backdrop-blur-lg border-zinc-50/20 rounded-lg shadow-md py-2 top-16 w-full text-3xl font-bold text-center mb-4 text-primary"
         >
-            Pescados
+            Ceviches
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
@@ -32,24 +34,14 @@ const { menuItems } = Astro.props as Props;
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                class="lucide lucide-fish inline-block ml-2 mb-1"
-                ><path
-                    d="M6.5 12c.94-3.46 4.94-6 8.5-6 3.56 0 6.06 2.54 7 6-.94 3.47-3.44 6-7 6s-7.56-2.53-8.5-6Z"
-                ></path><path d="M18 12v.5"></path><path
-                    d="M16 17.93a9.77 9.77 0 0 1 0-11.86"></path><path
-                    d="M7 10.67C7 8 5.58 5.97 2.73 5.5c-1 1.5-1 5 .23 6.5-1.24 1.5-1.24 5-.23 6.5C5.58 18.03 7 16 7 13.33"
-                ></path><path
-                    d="M10.46 7.26C10.2 5.88 9.17 4.24 8 3h5.8a2 2 0 0 1 1.98 1.67l.23 1.4"
-                ></path><path
-                    d="m16.01 17.93-.23 1.4A2 2 0 0 1 13.8 21H9.5a5.96 5.96 0 0 0 1.49-3.98"
-                ></path></svg
+                class="lucide lucide-hand-platter inline-block ml-2 mb-1.5"
+                ><path d="M12 3V2"></path><path
+                    d="m15.4 17.4 3.2-2.8a2 2 0 1 1 2.8 2.9l-3.6 3.3c-.7.8-1.7 1.2-2.8 1.2h-4c-1.1 0-2.1-.4-2.8-1.2l-1.302-1.464A1 1 0 0 0 6.151 19H5"
+                ></path><path d="M2 14h12a2 2 0 0 1 0 4h-2"></path><path
+                    d="M4 10h16"></path><path d="M5 10a7 7 0 0 1 14 0"
+                ></path><path d="M5 14v6a1 1 0 0 1-1 1H2"></path></svg
             >
         </h1>
-        <p class="text-center max-w-xl mx-auto text-balance text-gray-300 mb-8">
-            (La disponibilidad de nuestros productos depende de la temporada,
-            vedas y meteorología) (opciones incluyen un acompañamiento: arroz,
-            papas mayo, ensalada chilena o ensalada surtida).
-        </p>
         <div class="grid gap-3 md:grid-cols-2 lg:grid-cols-3 px-4">
             {
                 menuItems.map((item, index) => (
