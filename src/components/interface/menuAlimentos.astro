@@ -1,0 +1,69 @@
+---
+import Pescados from "./menu/Pescados.astro";
+import Carnes from "./menu/Carnes.astro";
+import Entradas from "./menu/Entradas.astro";
+import Ceviches from "./menu/Ceviches.astro";
+import Vegetariano from "./menu/Vegetariano.astro";
+import Chupes from "./menu/Chupes.astro";
+import Salsas from "./menu/Salsas.astro";
+import Agregados from "./menu/Agregados.astro";
+import SalsaVerdes from "./menu/SalsasVerdes.astro";
+import Apanados from "./menu/Apanados.astro";
+import Parmesano from "./menu/Parmesano.astro";
+import AlPilPil from "./menu/Alpilpil.astro";
+import MenuKids from "./menu/MenuKids.astro";
+import Sopa from "./menu/Sopa.astro";
+import Especialidades from "./menu/Especialidades.astro";
+import Cafeteria from "./menu/Cafeteria.astro";
+import Postres from "./menu/Postres.astro";
+import { getMenu } from "@/lib/menu";
+
+interface MenuItem {
+    title: string;
+    price: number;
+    description: string;
+}
+
+interface MenuData {
+    pescados: Array<MenuItem>;
+    carnes: Array<MenuItem>;
+    entradas: Array<MenuItem>;
+    ceviches: Array<MenuItem>;
+    vegetariano: Array<MenuItem>;
+    chupes: Array<MenuItem>;
+    salsas: Array<MenuItem>;
+    agregados: Array<MenuItem>;
+    salsasverdes: Array<MenuItem>;
+    apanados: Array<MenuItem>;
+    parmesano: Array<MenuItem>;
+    alpilpil: Array<MenuItem>;
+    menukids: Array<MenuItem>;
+    sopa: Array<MenuItem>;
+    especialidades: Array<MenuItem>;
+    cafeteria: Array<MenuItem>;
+    postres: Array<MenuItem>;
+}
+
+const res = await getMenu();
+const menuData: MenuData = JSON.parse(res);
+---
+
+<div class="container mx-auto">
+    <Pescados menuItems={menuData.pescados} />
+    <Carnes menuItems={menuData.carnes} />
+    <Entradas menuItems={menuData.entradas} />
+    <Ceviches menuItems={menuData.ceviches} />
+    <Vegetariano menuItems={menuData.vegetariano} />
+    <Chupes menuItems={menuData.chupes} />
+    <Salsas menuItems={menuData.salsas} />
+    <Agregados menuItems={menuData.agregados} />
+    <SalsaVerdes menuItems={menuData.salsasverdes} />
+    <Apanados menuItems={menuData.apanados} />
+    <Parmesano menuItems={menuData.parmesano} />
+    <AlPilPil menuItems={menuData.alpilpil} />
+    <MenuKids menuItems={menuData.menukids} />
+    <Sopa menuItems={menuData.sopa} />
+    <Especialidades menuItems={menuData.especialidades} />
+    <Cafeteria menuItems={menuData.cafeteria} />
+    <Postres menuItems={menuData.postres} />
+</div>

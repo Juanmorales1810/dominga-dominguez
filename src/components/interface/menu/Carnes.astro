@@ -1,0 +1,69 @@
+---
+interface MenuItem {
+    title: string;
+    price: number;
+    description: string;
+}
+interface Props {
+    menuItems: Array<MenuItem>;
+}
+
+function formatPrice(price: number): string {
+    return price
+        .toLocaleString("es-CL", { style: "currency", currency: "CLP" })
+        .replace("CLP", "")
+        .trim();
+}
+
+const { menuItems } = Astro.props as Props;
+---
+
+<section>
+    <div class="container mx-auto md:px-4 py-20">
+        <h1
+            class="sticky z-20 bg-zinc-900/70 backdrop-blur-lg border-zinc-50/20 rounded-lg shadow-md py-2 top-16 w-full text-3xl font-bold text-center mb-4 text-primary"
+        >
+            Carnes
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-beef inline-block ml-2 mb-1.5"
+                ><circle cx="12.5" cy="8.5" r="2.5"></circle><path
+                    d="M12.5 2a6.5 6.5 0 0 0-6.22 4.6c-1.1 3.13-.78 3.9-3.18 6.08A3 3 0 0 0 5 18c4 0 8.4-1.8 11.4-4.3A6.5 6.5 0 0 0 12.5 2Z"
+                ></path><path
+                    d="m18.5 6 2.19 4.5a6.48 6.48 0 0 1 .31 2 6.49 6.49 0 0 1-2.6 5.2C15.4 20.2 11 22 7 22a3 3 0 0 1-2.68-1.66L2.4 16.5"
+                ></path></svg
+            >
+        </h1>
+        <p class="text-center max-w-xl mx-auto text-balance text-gray-300 mb-8">
+            Opciones incluyen un acompañamiento: arroz, papas mayo, ensalada
+            chilena o ensalada surtida.
+        </p>
+        <div class="grid gap-3 md:grid-cols-2 lg:grid-cols-3 px-4">
+            {
+                menuItems.map((item, index) => (
+                    <div class="bg-zinc-400/10 backdrop-blur-lg border-zinc-50/20 rounded-lg shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-2">
+                                <h2 class="text-xl font-semibold text-white">
+                                    {item.title}
+                                </h2>
+                                <span class="text-lg font-bold text-primary">
+                                    {formatPrice(item.price)}
+                                </span>
+                            </div>
+                            <p class="text-zinc-300">{item.description}</p>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
