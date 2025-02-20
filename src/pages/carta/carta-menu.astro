@@ -1,10 +1,8 @@
 ---
 import LayoutMenu from "@/layouts/LayoutMenu.astro";
-import { Info } from "lucide-react";
-import MenuComponent from "@/components/interface/menuAlimentos";
-import { setCache } from "@/lib/cache";
-
-setCache.short(Astro);
+import { Info, LoaderCircle } from "lucide-react";
+import MenuComponent from "@/components/interface/menuAlimentos.astro";
+export const prerender = true;
 ---
 
 <LayoutMenu
@@ -21,6 +19,14 @@ setCache.short(Astro);
             Estimado Cliente si desea solicitar factura, la cancelación debe de ser
             en efectivo o transferencia. Gracias.
         </p>
-        <MenuComponent client:only />
+        <MenuComponent server:defer>
+            <div slot="fallback" class="text-center text-white text-xl py-8">
+                <LoaderCircle
+                    size={64}
+                    className="m-auto animate-spin text-primary"
+                />
+                Cargando menú...
+            </div>
+        </MenuComponent>
     </section>
 </LayoutMenu>
