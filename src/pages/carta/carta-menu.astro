@@ -1,6 +1,6 @@
 ---
 import LayoutMenu from "@/layouts/LayoutMenu.astro";
-import { Info } from "lucide-react";
+import { Info, LoaderCircle } from "lucide-react";
 import MenuComponent from "@/components/interface/menuAlimentos.astro";
 export const prerender = true;
 ---
@@ -21,6 +21,11 @@ export const prerender = true;
         </p>
         <MenuComponent server:defer>
             <div slot="fallback" class="text-center text-white text-xl py-8">
+                <LoaderCircle
+                    client:load
+                    size={64}
+                    className="m-auto animate-spin text-primary"
+                />
                 Cargando menú...
             </div>
         </MenuComponent>

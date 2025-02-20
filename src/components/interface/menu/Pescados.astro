@@ -25,7 +25,7 @@ const { menuItems } = Astro.props as Props;
         >
             Pescados
             <FishIcon
-                server:defer
+                client:load
                 size={32}
                 className="inline-block ml-2 mb-1"
             />
