@@ -1,95 +1,20 @@
 ---
-import { Beer, Wine } from "lucide-react";
-
 interface MenuItem {
     title: string;
     price: number;
     description: string;
 }
 
-const menuItems: MenuItem[] = [
-    {
-        title: "Clavo Oxidado",
-        price: 8200,
-        description: "",
-    },
-    {
-        title: "Tom Collins",
-        price: 6800,
-        description: "",
-    },
-    {
-        title: "John Collins",
-        price: 6800,
-        description: "",
-    },
-    {
-        title: "Piña Colada",
-        price: 6500,
-        description: "",
-    },
-    {
-        title: "Ruso Blanco",
-        price: 6800,
-        description: "",
-    },
-    {
-        title: "Ruso Negro",
-        price: 6800,
-        description: "",
-    },
-    {
-        title: "Manhattan",
-        price: 6200,
-        description: "",
-    },
-    {
-        title: "Old Fashioned",
-        price: 6200,
-        description: "",
-    },
-    {
-        title: "Moscow mule",
-        price: 7900,
-        description: "",
-    },
-    {
-        title: "London mule",
-        price: 7900,
-        description: "",
-    },
-    {
-        title: "Cosmopolitan",
-        price: 6200,
-        description: "",
-    },
-    {
-        title: "God Father",
-        price: 6900,
-        description: "",
-    },
-    {
-        title: "Martini Dry",
-        price: 6900,
-        description: "",
-    },
-    {
-        title: "Expresso Martini",
-        price: 7200,
-        description: "",
-    },
-    {
-        title: "Fernet",
-        price: 4800,
-        description: "",
-    },
-];
+interface Props {
+    menuItems: Array<MenuItem>;
+}
 function formatPrice(price: number): string {
     return price
         .toLocaleString("es-CL", { style: "currency", currency: "CLP" })
         .replace("CLP", "")
         .trim();
 }
+const { menuItems } = Astro.props as Props;
 ---
 
 <section>

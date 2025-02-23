@@ -5,24 +5,16 @@ interface MenuItem {
     description: string;
 }
 
-const menuItems: MenuItem[] = [
-    {
-        title: "Brandy Miguel Torres",
-        price: 7500,
-        description: "20 años",
-    },
-    {
-        title: "Brandy Miguel Torres",
-        price: 13500,
-        description: "30 años Jaime I",
-    },
-];
+interface Props {
+    menuItems: Array<MenuItem>;
+}
 function formatPrice(price: number): string {
     return price
         .toLocaleString("es-CL", { style: "currency", currency: "CLP" })
         .replace("CLP", "")
         .trim();
 }
+const { menuItems } = Astro.props as Props;
 ---
 
 <section>
