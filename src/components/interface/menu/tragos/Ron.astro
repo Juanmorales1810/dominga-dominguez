@@ -5,39 +5,16 @@ interface MenuItem {
     description: string;
 }
 
-const menuItems: MenuItem[] = [
-    {
-        title: "Pampero",
-        price: 6500,
-        description: "Aniversario",
-    },
-    {
-        title: "Bacardi",
-        price: 4500,
-        description: "",
-    },
-    {
-        title: "Habana Club",
-        price: 6000,
-        description: "7 años",
-    },
-    {
-        title: "Habana Club",
-        price: 5200,
-        description: "3 años",
-    },
-    {
-        title: "Habana Club",
-        price: 5200,
-        description: "Añejo Especial",
-    },
-];
+interface Props {
+    menuItems: Array<MenuItem>;
+}
 function formatPrice(price: number): string {
     return price
         .toLocaleString("es-CL", { style: "currency", currency: "CLP" })
         .replace("CLP", "")
         .trim();
 }
+const { menuItems } = Astro.props as Props;
 ---
 
 <section>

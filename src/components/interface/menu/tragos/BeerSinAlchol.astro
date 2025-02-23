@@ -1,50 +1,20 @@
 ---
-import { Beer } from "lucide-react";
-
 interface MenuItem {
     title: string;
     price: number;
     description: string;
 }
 
-const menuItems: MenuItem[] = [
-    {
-        title: "Kunstmann S/A",
-        price: 4200,
-        description: "",
-    },
-    {
-        title: "Heineken 0.0",
-        price: 4200,
-        description: "",
-    },
-    {
-        title: "Mahou",
-        price: 4200,
-        description: "",
-    },
-    {
-        title: "Corona cero",
-        price: 4200,
-        description: "",
-    },
-    {
-        title: "Austral Lager",
-        price: 4200,
-        description: "",
-    },
-    {
-        title: "Royal Guard S/A",
-        price: 4200,
-        description: "",
-    },
-];
+interface Props {
+    menuItems: Array<MenuItem>;
+}
 function formatPrice(price: number): string {
     return price
         .toLocaleString("es-CL", { style: "currency", currency: "CLP" })
         .replace("CLP", "")
         .trim();
 }
+const { menuItems } = Astro.props as Props;
 ---
 
 <section>
@@ -53,7 +23,23 @@ function formatPrice(price: number): string {
             class="sticky z-20 bg-zinc-900/70 backdrop-blur-lg border-zinc-50/20 rounded-lg shadow-md py-2 top-16 w-full text-3xl font-bold text-center mb-4 text-primary"
         >
             Cervezas Sin Alcohol
-            <Beer size={32} className="inline-block mb-1.5" />
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-beer inline-block mb-1.5"
+                ><path d="M17 11h1a3 3 0 0 1 0 6h-1"></path><path d="M9 12v6"
+                ></path><path d="M13 12v6"></path><path
+                    d="M14 7.5c-1 0-1.44.5-3 .5s-2-.5-3-.5-1.72.5-2.5.5a2.5 2.5 0 0 1 0-5c.78 0 1.57.5 2.5.5S9.44 2 11 2s2 1.5 3 1.5 1.72-.5 2.5-.5a2.5 2.5 0 0 1 0 5c-.78 0-1.5-.5-2.5-.5Z"
+                ></path><path d="M5 8v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8"
+                ></path></svg
+            >
         </h1>
         <div class="grid gap-3 md:grid-cols-2 lg:grid-cols-3 px-4">
             {

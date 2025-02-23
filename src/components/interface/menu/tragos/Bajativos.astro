@@ -5,59 +5,16 @@ interface MenuItem {
     description: string;
 }
 
-const menuItems: MenuItem[] = [
-    {
-        title: "Amaretto Disaronno",
-        price: 7200,
-        description: "",
-    },
-    {
-        title: "Amaretto nacional",
-        price: 3500,
-        description: "",
-    },
-    {
-        title: "Menta",
-        price: 3500,
-        description: "",
-    },
-    {
-        title: "Manzanilla",
-        price: 3500,
-        description: "",
-    },
-    {
-        title: "Araucano",
-        price: 4500,
-        description: "",
-    },
-    {
-        title: "Limoncello",
-        price: 4500,
-        description: "",
-    },
-    {
-        title: "Frangelico",
-        price: 4500,
-        description: "",
-    },
-    {
-        title: "Jagermeister",
-        price: 4800,
-        description: "",
-    },
-    {
-        title: "Drambuie",
-        price: 5800,
-        description: "",
-    },
-];
+interface Props {
+    menuItems: Array<MenuItem>;
+}
 function formatPrice(price: number): string {
     return price
         .toLocaleString("es-CL", { style: "currency", currency: "CLP" })
         .replace("CLP", "")
         .trim();
 }
+const { menuItems } = Astro.props as Props;
 ---
 
 <section>

@@ -1,35 +1,20 @@
 ---
-import { Beer, Wine } from "lucide-react";
-
 interface MenuItem {
     title: string;
     price: number;
     description: string;
 }
 
-const menuItems: MenuItem[] = [
-    {
-        title: "Senda Real",
-        price: 4200,
-        description: "",
-    },
-    {
-        title: "Olmeca",
-        price: 4500,
-        description: "",
-    },
-    {
-        title: "José Cuervo",
-        price: 4800,
-        description: "",
-    },
-];
+interface Props {
+    menuItems: Array<MenuItem>;
+}
 function formatPrice(price: number): string {
     return price
         .toLocaleString("es-CL", { style: "currency", currency: "CLP" })
         .replace("CLP", "")
         .trim();
 }
+const { menuItems } = Astro.props as Props;
 ---
 
 <section>

@@ -1,30 +1,7 @@
 ---
-import Aperitivos from "@/components/interface/menu/tragos/Aperitivos.astro";
-import Bajativos from "@/components/interface/menu/tragos/Bajativos.astro";
-import Bebidas from "@/components/interface/menu/tragos/Bebidas.astro";
-import BeerInternacional from "@/components/interface/menu/tragos/BeerInternacional.astro";
-import BeerNacional from "@/components/interface/menu/tragos/BeerNacional.astro";
-import BeerSinAlchol from "@/components/interface/menu/tragos/BeerSinAlchol.astro";
-import Brandy from "@/components/interface/menu/tragos/Brandy.astro";
-import CastilloMolina from "@/components/interface/menu/tragos/CastilloMolina.astro";
-import CavaDominguez from "@/components/interface/menu/tragos/CavaDominguez.astro";
-import Energizante from "@/components/interface/menu/tragos/Energizante.astro";
-import Espumante from "@/components/interface/menu/tragos/Espumante.astro";
-import Gin from "@/components/interface/menu/tragos/Gin.astro";
-import GranTarapaca from "@/components/interface/menu/tragos/GranTarapaca.astro";
-import Jugos from "@/components/interface/menu/tragos/Jugos.astro";
-import Leyenda from "@/components/interface/menu/tragos/Leyenda.astro";
-import MisionesRengo from "@/components/interface/menu/tragos/MisionesRengo.astro";
-import Piscos from "@/components/interface/menu/tragos/Piscos.astro";
-import Ron from "@/components/interface/menu/tragos/Ron.astro";
-import SanPedro from "@/components/interface/menu/tragos/SanPedro.astro";
-import Tequila from "@/components/interface/menu/tragos/Tequila.astro";
-import Tololo from "@/components/interface/menu/tragos/Tololo.astro";
-import Tragos from "@/components/interface/menu/tragos/Tragos.astro";
-import Vodka from "@/components/interface/menu/tragos/Vodka.astro";
-import Whisky from "@/components/interface/menu/tragos/Whisky.astro";
 import LayoutMenu from "@/layouts/LayoutMenu.astro";
 import { Info } from "lucide-react";
+import MenuComponent from "@/components/interface/menu/tragos/MenuTragos.astro";
 export const prerender = true;
 ---
 
@@ -42,29 +19,23 @@ export const prerender = true;
             Estimado Cliente si desea solicitar factura, la cancelación debe de ser
             en efectivo o transferencia. Gracias.
         </p>
-        <Bebidas />
-        <Jugos />
-        <Energizante />
-        <BeerNacional />
-        <BeerInternacional />
-        <BeerSinAlchol />
-        <Espumante />
-        <Aperitivos />
-        <Tequila />
-        <Tragos />
-        <Piscos />
-        <Tololo />
-        <CastilloMolina />
-        <MisionesRengo />
-        <GranTarapaca />
-        <Leyenda />
-        <SanPedro />
-        <CavaDominguez />
-        <Brandy />
-        <Whisky />
-        <Ron />
-        <Vodka />
-        <Gin />
-        <Bajativos />
+        <MenuComponent server:defer>
+            <div slot="fallback" class="text-center text-white text-xl py-8">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="64"
+                    height="64"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-loader-circle m-auto animate-spin text-primary"
+                    ><path d="M21 12a9 9 0 1 1-6.219-8.56"></path></svg
+                >
+                Cargando menú...
+            </div>
+        </MenuComponent>
     </section>
 </LayoutMenu>

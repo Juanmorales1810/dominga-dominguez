@@ -1,0 +1,92 @@
+---
+import { getTragos } from "@/lib/menu";
+import Bebidas from "./Bebidas.astro";
+import Jugos from "./Jugos.astro";
+import Energizante from "./Energizante.astro";
+import BeerNacional from "./BeerNacional.astro";
+import BeerInternacional from "./BeerInternacional.astro";
+import BeerSinAlchol from "./BeerSinAlchol.astro";
+import Espumante from "./Espumante.astro";
+import Aperitivos from "./Aperitivos.astro";
+import Tequila from "./Tequila.astro";
+import Tragos from "./Tragos.astro";
+import Piscos from "./Piscos.astro";
+import Tololo from "./Tololo.astro";
+import CastilloMolina from "./CastilloMolina.astro";
+import MisionesRengo from "./MisionesRengo.astro";
+import GranTarapaca from "./GranTarapaca.astro";
+import Leyenda from "./Leyenda.astro";
+import SanPedro from "./SanPedro.astro";
+import CavaDominguez from "./CavaDominguez.astro";
+import Brandy from "./Brandy.astro";
+import Gin from "./Gin.astro";
+import Ron from "./Ron.astro";
+import Vodka from "./Vodka.astro";
+import Whisky from "./Whisky.astro";
+import Bajativos from "./Bajativos.astro";
+import { setCache } from "@/lib/cache.ts";
+
+interface MenuItem {
+    title: string;
+    price: number;
+    description: string;
+}
+
+interface MenuData {
+    bebidas: Array<MenuItem>;
+    jugos: Array<MenuItem>;
+    energizante: Array<MenuItem>;
+    beernacional: Array<MenuItem>;
+    beerinternacional: Array<MenuItem>;
+    beersinalchol: Array<MenuItem>;
+    espumante: Array<MenuItem>;
+    aperitivos: Array<MenuItem>;
+    tequila: Array<MenuItem>;
+    tragos: Array<MenuItem>;
+    piscos: Array<MenuItem>;
+    tololo: Array<MenuItem>;
+    castillomolina: Array<MenuItem>;
+    misionesrengo: Array<MenuItem>;
+    grantarapaca: Array<MenuItem>;
+    leyenda: Array<MenuItem>;
+    sanpedro: Array<MenuItem>;
+    cavadominguez: Array<MenuItem>;
+    brandy: Array<MenuItem>;
+    whisky: Array<MenuItem>;
+    ron: Array<MenuItem>;
+    vodka: Array<MenuItem>;
+    gin: Array<MenuItem>;
+    bajativos: Array<MenuItem>;
+}
+
+const res = await getTragos();
+const menuData: MenuData = JSON.parse(res);
+setCache.long(Astro);
+---
+
+<div class="container mx-auto">
+    <Bebidas menuItems={menuData.bebidas} />
+    <Jugos menuItems={menuData.jugos} />
+    <Energizante menuItems={menuData.energizante} />
+    <BeerNacional menuItems={menuData.beernacional} />
+    <BeerInternacional menuItems={menuData.beerinternacional} />
+    <BeerSinAlchol menuItems={menuData.beersinalchol} />
+    <Espumante menuItems={menuData.espumante} />
+    <Aperitivos menuItems={menuData.aperitivos} />
+    <Tequila menuItems={menuData.tequila} />
+    <Tragos menuItems={menuData.tragos} />
+    <Piscos menuItems={menuData.piscos} />
+    <Tololo menuItems={menuData.tololo} />
+    <CastilloMolina menuItems={menuData.castillomolina} />
+    <MisionesRengo menuItems={menuData.misionesrengo} />
+    <GranTarapaca menuItems={menuData.grantarapaca} />
+    <Leyenda menuItems={menuData.leyenda} />
+    <SanPedro menuItems={menuData.sanpedro} />
+    <CavaDominguez menuItems={menuData.cavadominguez} />
+    <Brandy menuItems={menuData.brandy} />
+    <Whisky menuItems={menuData.whisky} />
+    <Ron menuItems={menuData.ron} />
+    <Vodka menuItems={menuData.vodka} />
+    <Gin menuItems={menuData.gin} />
+    <Bajativos menuItems={menuData.bajativos} />
+</div>
