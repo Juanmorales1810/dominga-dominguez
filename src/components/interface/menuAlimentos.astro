@@ -17,6 +17,7 @@ import Especialidades from "./menu/Especialidades.astro";
 import Cafeteria from "./menu/Cafeteria.astro";
 import Postres from "./menu/Postres.astro";
 import { getMenu } from "@/lib/menu";
+import { setCache } from "@/lib/cache";
 
 interface MenuItem {
     title: string;
@@ -46,6 +47,7 @@ interface MenuData {
 
 const res = await getMenu();
 const menuData: MenuData = JSON.parse(res);
+setCache.long(Astro);
 ---
 
 <div class="container mx-auto">
