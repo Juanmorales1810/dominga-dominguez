@@ -18,6 +18,7 @@ import Cafeteria from "./menu/Cafeteria.astro";
 import Postres from "./menu/Postres.astro";
 import { getMenu } from "@/lib/menu";
 import { setCache } from "@/lib/cache";
+import Sunset from "./menu/Sunset.astro";
 
 interface MenuItem {
     title: string;
@@ -43,6 +44,7 @@ interface MenuData {
     especialidades: Array<MenuItem>;
     cafeteria: Array<MenuItem>;
     postres: Array<MenuItem>;
+    sunset: Array<MenuItem>;
 }
 
 const res = await getMenu();
@@ -68,4 +70,5 @@ setCache.long(Astro);
     <Especialidades menuItems={menuData.especialidades} />
     <Cafeteria menuItems={menuData.cafeteria} />
     <Postres menuItems={menuData.postres} />
+    <Sunset menuItems={menuData.sunset} />
 </div>
